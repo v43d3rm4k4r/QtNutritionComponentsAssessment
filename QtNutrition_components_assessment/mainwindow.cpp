@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDebug>
+#include <thread>
+#include <chrono>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -15,10 +17,14 @@ MainWindow::MainWindow(QWidget *parent)
                    << ui->labelComp5;
 
     connect(ui->spinBoxComp, SIGNAL(valueChanged(int)),
-            this, SLOT(on_spinBoxCalculate_valueChanged(int))
+            this, SLOT(on_spinBoxComp_valueChanged(int))
             );
 
-    on_spinBoxCalculate_valueChanged(1); // исусственно убираем пока не нужные ряды
+    std::this_thread::sleep_for(std::chrono::seconds(2));
+
+    initMainWindow();
+
+    //on_spinBoxComp_valueChanged(1);
 
 }
 
@@ -27,7 +33,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_spinBoxCalculate_valueChanged(int value)
+void MainWindow::on_spinBoxComp_valueChanged(int value)
 {
     static int earlyer_value = 1;
 
@@ -265,4 +271,16 @@ void MainWindow::changeLabelsForMultComp()
     ui->label_22->setText("Введите кол-во полиненасыщенных жирных кислот на 100г каждого компонента:");
     ui->label_23->setText("Введите омега-6 на 100г каждого компонента:");
     ui->label_24->setText("Введите омега-3 на 100г каждого компонента:");
+}
+
+void MainWindow::initMainWindow()
+{
+    for (int i = 3; i <= 5; ++i)
+    {
+        for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
+        {
+            currentSpinBox->hide();
+        }
+        listCompLabels[i-1]->hide();
+    }
 }

@@ -63,6 +63,7 @@ private:
     QList<QDoubleSpinBox*> getColumnOfCompSpinboxes(int column);
     QList<QLabel*> listCompLabels;
 
+    void initMainWindow();
     void changeLabelsFor1Comp();
     void changeLabelsForMultComp();
 
@@ -73,5 +74,5 @@ public:
 
 
 private slots:
-    void on_spinBoxCalculate_valueChanged(int value);
+    void on_spinBoxComp_valueChanged(int value);
 };
