@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QMainWindow>
+#include <QDoubleSpinBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -60,6 +61,7 @@ private:
     double result1 = 0.0;
     double result2 = 0.0;
 
+    QList<QDoubleSpinBox*> getColumnOfCompSpinboxes(int column);
 
 public:
     MainWindow(QWidget *parent = nullptr);
@@ -67,5 +69,5 @@ public:
 
 
 private slots:
-    void on_spinBox_valueChanged(int value);
+    void on_spinBoxCalculate_valueChanged(int value);
 };

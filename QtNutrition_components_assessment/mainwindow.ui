@@ -44,7 +44,7 @@
          </widget>
         </item>
         <item row="7" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_16">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxValin5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -77,7 +77,7 @@
          </widget>
         </item>
         <item row="14" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_46">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -98,7 +98,7 @@
          </widget>
         </item>
         <item row="16" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_55">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -128,7 +128,7 @@
          </spacer>
         </item>
         <item row="8" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_19">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxGistidin3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -137,7 +137,7 @@
          </widget>
         </item>
         <item row="11" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_31">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -158,7 +158,7 @@
          </widget>
         </item>
         <item row="7" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_13">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxValin2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -167,7 +167,7 @@
          </widget>
         </item>
         <item row="13" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_38">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -176,7 +176,7 @@
          </widget>
         </item>
         <item row="8" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_18">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxGistidin2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -185,7 +185,7 @@
          </widget>
         </item>
         <item row="14" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_43">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -194,7 +194,7 @@
          </widget>
         </item>
         <item row="7" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_12">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxValin1">
           <property name="enabled">
            <bool>true</bool>
           </property>
@@ -227,7 +227,7 @@
          </widget>
         </item>
         <item row="5" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_8">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxProteinsComp2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -239,7 +239,7 @@
          </widget>
         </item>
         <item row="12" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_33">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -248,7 +248,7 @@
          </widget>
         </item>
         <item row="8" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_20">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxGistidin4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -257,7 +257,7 @@
          </widget>
         </item>
         <item row="14" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_45">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -278,7 +278,7 @@
          </widget>
         </item>
         <item row="15" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_48">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTriptofan2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -287,7 +287,7 @@
          </widget>
         </item>
         <item row="7" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_14">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxValin3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -320,7 +320,7 @@
          </widget>
         </item>
         <item row="13" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_40">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -329,7 +329,7 @@
          </widget>
         </item>
         <item row="13" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_41">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -350,7 +350,7 @@
          </widget>
         </item>
         <item row="8" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_21">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxGistidin5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -359,7 +359,7 @@
          </widget>
         </item>
         <item row="16" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_54">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -368,7 +368,7 @@
          </widget>
         </item>
         <item row="11" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_30">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -377,7 +377,7 @@
          </widget>
         </item>
         <item row="16" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_53">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -398,7 +398,7 @@
          </widget>
         </item>
         <item row="14" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_42">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -407,7 +407,7 @@
          </widget>
         </item>
         <item row="10" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_17">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -416,7 +416,7 @@
          </widget>
         </item>
         <item row="12" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_35">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -425,7 +425,7 @@
          </widget>
         </item>
         <item row="5" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_9">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxProteinsComp3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -446,7 +446,7 @@
          </widget>
         </item>
         <item row="10" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_25">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -479,7 +479,7 @@
          </widget>
         </item>
         <item row="10" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_26">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -488,7 +488,7 @@
          </widget>
         </item>
         <item row="15" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_50">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTriptofan4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -497,7 +497,7 @@
          </widget>
         </item>
         <item row="15" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_51">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTriptofan5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -518,7 +518,7 @@
          </widget>
         </item>
         <item row="12" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_32">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -566,7 +566,7 @@
          </widget>
         </item>
         <item row="10" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_23">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -590,7 +590,7 @@
          </widget>
         </item>
         <item row="5" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_11">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxProteinsComp5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -599,7 +599,7 @@
          </widget>
         </item>
         <item row="8" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_22">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxGistidin1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -608,7 +608,7 @@
          </widget>
         </item>
         <item row="12" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_36">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -617,7 +617,7 @@
          </widget>
         </item>
         <item row="13" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_37">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -638,7 +638,7 @@
          </widget>
         </item>
         <item row="15" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_49">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTriptofan3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -647,7 +647,7 @@
          </widget>
         </item>
         <item row="16" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_56">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -692,7 +692,7 @@
          </widget>
         </item>
         <item row="14" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_44">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -701,7 +701,7 @@
          </widget>
         </item>
         <item row="7" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_15">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxValin4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -710,7 +710,7 @@
          </widget>
         </item>
         <item row="15" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_47">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTriptofan1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -719,7 +719,7 @@
          </widget>
         </item>
         <item row="10" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_24">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -728,7 +728,7 @@
          </widget>
         </item>
         <item row="12" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_34">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -737,7 +737,7 @@
          </widget>
         </item>
         <item row="16" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_52">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -746,7 +746,7 @@
          </widget>
         </item>
         <item row="13" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_39">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -755,7 +755,7 @@
          </widget>
         </item>
         <item row="5" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_10">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxProteinsComp4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -764,7 +764,7 @@
          </widget>
         </item>
         <item row="11" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_29">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -773,7 +773,7 @@
          </widget>
         </item>
         <item row="11" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_27">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -791,7 +791,7 @@
          </widget>
         </item>
         <item row="11" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_28">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -825,7 +825,7 @@
       <item>
        <layout class="QGridLayout" name="gridLayout_3">
         <item row="6" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_81">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega3_1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -834,7 +834,7 @@
          </widget>
         </item>
         <item row="1" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_64">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -843,7 +843,7 @@
          </widget>
         </item>
         <item row="4" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_73">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -864,7 +864,7 @@
          </widget>
         </item>
         <item row="1" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_63">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -873,7 +873,7 @@
          </widget>
         </item>
         <item row="3" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_68">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -882,7 +882,7 @@
          </widget>
         </item>
         <item row="6" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_83">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega3_3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -891,7 +891,7 @@
          </widget>
         </item>
         <item row="5" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_79">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega6_4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -900,7 +900,7 @@
          </widget>
         </item>
         <item row="1" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_62">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -909,7 +909,7 @@
          </widget>
         </item>
         <item row="5" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_76">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega6_1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -918,7 +918,7 @@
          </widget>
         </item>
         <item row="1" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_65">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -927,7 +927,7 @@
          </widget>
         </item>
         <item row="6" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_82">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega3_2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -936,7 +936,7 @@
          </widget>
         </item>
         <item row="5" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_77">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega6_2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -945,7 +945,7 @@
          </widget>
         </item>
         <item row="3" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -954,7 +954,7 @@
          </widget>
         </item>
         <item row="6" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_84">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega3_4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -963,7 +963,7 @@
          </widget>
         </item>
         <item row="4" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_75">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -996,7 +996,7 @@
          </widget>
         </item>
         <item row="4" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_71">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1005,7 +1005,7 @@
          </widget>
         </item>
         <item row="5" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_78">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega6_3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1014,7 +1014,7 @@
          </widget>
         </item>
         <item row="6" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_85">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega3_5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1023,7 +1023,7 @@
          </widget>
         </item>
         <item row="7" column="0">
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="pushButtonCalculate">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1044,7 +1044,7 @@
          </widget>
         </item>
         <item row="5" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_80">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega6_5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1053,7 +1053,7 @@
          </widget>
         </item>
         <item row="4" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_74">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1062,7 +1062,7 @@
          </widget>
         </item>
         <item row="3" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_70">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1078,7 +1078,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Введите кол-во мононасыщенных жирных кислот на 100г (каждого) компонента:</string>
+           <string>Введите кол-во мононенасыщенных жирных кислот на 100г (каждого) компонента:</string>
           </property>
          </widget>
         </item>
@@ -1095,7 +1095,7 @@
          </widget>
         </item>
         <item row="3" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_67">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1104,7 +1104,7 @@
          </widget>
         </item>
         <item row="4" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_72">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1113,7 +1113,7 @@
          </widget>
         </item>
         <item row="1" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_66">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1122,7 +1122,7 @@
          </widget>
         </item>
         <item row="3" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_69">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1143,7 +1143,7 @@
          </widget>
         </item>
         <item row="0" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_57">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1152,7 +1152,7 @@
          </widget>
         </item>
         <item row="0" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_58">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1161,7 +1161,7 @@
          </widget>
         </item>
         <item row="0" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_59">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1170,7 +1170,7 @@
          </widget>
         </item>
         <item row="0" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_60">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1179,7 +1179,7 @@
          </widget>
         </item>
         <item row="0" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_61">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>

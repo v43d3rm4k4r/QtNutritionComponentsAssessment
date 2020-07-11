@@ -6,18 +6,17 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    LPCSTR title = "NUTRITION COMPONENTS ASSESSMENT";
-    SetConsoleTitleA(title);
+    QApplication app(argc, argv);
 
     MainWindow w;
+    w.setWindowTitle("NUTRITION COMPONENTS ASSESSMENT");
 
-    //w.resize(w.minimumSize());
+    w.resize(w.minimumSize());
     qDebug() << w.size().width();
     qDebug() << w.size().height();
 
     w.show();
 
 
-    return a.exec();
+    return app.exec();
 }
