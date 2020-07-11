@@ -2,6 +2,7 @@
 
 #include <QMainWindow>
 #include <QDoubleSpinBox>
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,8 +18,6 @@ class MainWindow : public QMainWindow
 
 private:
     Ui::MainWindow *ui;
-
-    QSize defaultWindowSize;
 
     size_t comp_num; // кол-во компонентов
 
@@ -62,6 +61,11 @@ private:
     double result2 = 0.0;
 
     QList<QDoubleSpinBox*> getColumnOfCompSpinboxes(int column);
+    QList<QLabel*> listCompLabels;
+
+    void changeLabelsFor1Comp();
+    void changeLabelsForMultComp();
+
 
 public:
     MainWindow(QWidget *parent = nullptr);

@@ -12,8 +12,6 @@ int main(int argc, char *argv[])
     w.setWindowTitle("NUTRITION COMPONENTS ASSESSMENT");
 
     w.resize(w.minimumSize());
-    qDebug() << w.size().width();
-    qDebug() << w.size().height();
 
     w.show();
 

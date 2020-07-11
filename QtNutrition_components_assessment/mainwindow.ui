@@ -31,20 +31,8 @@
       </property>
       <item>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="2" column="5">
-         <widget class="QLabel" name="labelComp4">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Компонент 4</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxValin5">
+        <item row="22" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega3_4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -52,15 +40,393 @@
           </property>
          </widget>
         </item>
-        <item row="8" column="0">
-         <widget class="QLabel" name="label_5">
+        <item row="7" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxValin2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="21" column="6">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega6_5">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="6">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein5">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="21" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega6_2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="19" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids4">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="18" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="20" column="0">
+         <widget class="QLabel" name="label_22">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
           <property name="text">
-           <string>Введите Гистидин:</string>
+           <string>Введите кол-во полиненасыщенных жирных кислот на 100г (каждого) компонента:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin4">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="22" column="2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega3_1">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+         </widget>
+        </item>
+        <item row="20" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="19" column="0">
+         <widget class="QLabel" name="label_21">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Введите кол-во мононенасыщенных жирных кислот на 100г (каждого) компонента:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="4">
+         <widget class="QLabel" name="labelComp3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Компонент 3</string>
+          </property>
+         </widget>
+        </item>
+        <item row="14" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="15" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTriptofan4">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="6">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxGistidin5">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="20" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxPropComp4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxProteinsComp4">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="14" column="6">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin5">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="18" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="0">
+         <widget class="QLabel" name="label_15">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Введите Метионин+Цистеин:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxPropComp3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="22" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega3_2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+         </widget>
+        </item>
+        <item row="16" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="6">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxProteinsComp5">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxGistidin3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="0">
+         <widget class="QLabel" name="label_13">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Введите Лейцин:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="21" column="0">
+         <widget class="QLabel" name="label_23">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Введите омега-6 на 100г каждого компонента:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="6">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin5">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="0">
+         <widget class="QLabel" name="label_14">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Введите Лизин:</string>
           </property>
          </widget>
         </item>
@@ -76,12 +442,183 @@
           </property>
          </widget>
         </item>
-        <item row="14" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin5">
+        <item row="19" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxValin3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="22" column="0">
+         <widget class="QLabel" name="label_24">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Введите омега-3 на 100г каждого компонента:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin4">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Введите Валин:                           </string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Введите пропорции компонентов:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="6">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin5">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="17" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="18" column="2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids1">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="15" column="0">
+         <widget class="QLabel" name="label_17">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Введите Триптофан:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="17" column="0">
+         <widget class="QLabel" name="label_19">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Введите кол-во липидов на 100г (каждого) компонента:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="16" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin4">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin1">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="17" column="2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp1">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
          </widget>
         </item>
@@ -95,83 +632,137 @@
           <property name="suffix">
            <string> г</string>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="16" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin4">
+        <item row="11" column="2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="5" column="1">
-         <spacer name="horizontalSpacer_2">
+        <item row="13" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>177</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
+         </widget>
         </item>
-        <item row="8" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxGistidin3">
+        <item row="15" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTriptofan3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="11" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin5">
+        <item row="19" column="2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label">
+        <item row="19" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="16" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="labelComp1">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
           <property name="text">
-           <string>Введите количество компонентов:</string>
+           <string>Компонент 1</string>
           </property>
          </widget>
         </item>
-        <item row="7" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxValin2">
+        <item row="20" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="13" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein2">
+        <item row="5" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxProteinsComp2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
+          </property>
+          <property name="suffix">
+           <string> г</string>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="15" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTriptofan2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
          </widget>
         </item>
@@ -182,14 +773,116 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="14" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin2">
+        <item row="7" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxValin4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Введите кол-во белка на 100г (каждого) компонента:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein4">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="18" column="0">
+         <widget class="QLabel" name="label_20">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Введите кол-во насыщенных жирных кислот на 100г (каждого) компонента:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin4">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxProteinsComp3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="17" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="16" column="6">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin5">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
          </widget>
         </item>
@@ -215,19 +908,61 @@
           <property name="decimals">
            <number>2</number>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="4" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxPropComp3">
+        <item row="16" column="2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="5" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxProteinsComp2">
+        <item row="20" column="2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids1">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin1">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="6">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin5">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxProteinsComp1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -236,74 +971,77 @@
           <property name="suffix">
            <string> г</string>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="12" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin2">
+        <item row="4" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxPropComp2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="suffix">
+           <string> г</string>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="8" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxGistidin4">
+        <item row="19" column="6">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="14" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin4">
+        <item row="15" column="2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTriptofan1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="15" column="0">
-         <widget class="QLabel" name="label_17">
+        <item row="8" column="2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxGistidin1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
-          <property name="text">
-           <string>Введите Триптофан:</string>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
          </widget>
         </item>
-        <item row="15" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxTriptofan2">
+        <item row="21" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega6_3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
-         </widget>
-        </item>
-        <item row="7" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxValin3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="11" column="0">
-         <widget class="QLabel" name="label_13">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Введите Лейцин:</string>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
          </widget>
         </item>
@@ -319,138 +1057,27 @@
           </property>
          </widget>
         </item>
-        <item row="13" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein4">
+        <item row="14" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
          </widget>
         </item>
-        <item row="13" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein5">
+        <item row="13" column="2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
-         </widget>
-        </item>
-        <item row="14" column="0">
-         <widget class="QLabel" name="label_16">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Введите Треонин:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxGistidin5">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="16" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="11" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin4">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="16" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin2">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="0">
-         <widget class="QLabel" name="label_4">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Введите Валин:                           </string>
-          </property>
-         </widget>
-        </item>
-        <item row="14" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin1">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin1">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="12" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin4">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxProteinsComp3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="12" column="0">
-         <widget class="QLabel" name="label_14">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Введите Лизин:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin4">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
          </widget>
         </item>
@@ -466,33 +1093,75 @@
           </property>
          </widget>
         </item>
-        <item row="5" column="0">
-         <widget class="QLabel" name="label_3">
+        <item row="2" column="5">
+         <widget class="QLabel" name="labelComp4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
           <property name="text">
-           <string>Введите кол-во белка на 100г (каждого) компонента:</string>
+           <string>Компонент 4</string>
           </property>
          </widget>
         </item>
-        <item row="10" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin5">
+        <item row="18" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="15" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxTriptofan4">
+        <item row="12" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Введите Гистидин:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="17" column="6">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp5">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
          </widget>
         </item>
@@ -503,94 +1172,61 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="5" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxProteinsComp1">
+        <item row="14" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
-          <property name="suffix">
-           <string> г</string>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
          </widget>
         </item>
-        <item row="12" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin1">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="2">
-         <widget class="QLabel" name="labelComp1">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
           <property name="text">
-           <string>Компонент 1</string>
+           <string>Введите количество компонентов:</string>
           </property>
          </widget>
         </item>
-        <item row="13" column="0">
-         <widget class="QLabel" name="label_15">
+        <item row="13" column="3">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein2">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
-          <property name="text">
-           <string>Введите Метионин+Цистеин:</string>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
          </widget>
         </item>
-        <item row="4" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxPropComp4">
+        <item row="20" column="6">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
-         </widget>
-        </item>
-        <item row="10" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin2">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
          </widget>
         </item>
-        <item row="0" column="2">
-         <widget class="QSpinBox" name="spinBoxComp">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="minimum">
-           <number>1</number>
-          </property>
-          <property name="maximum">
-           <number>5</number>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxProteinsComp5">
+        <item row="22" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega3_3">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -598,72 +1234,15 @@
           </property>
          </widget>
         </item>
-        <item row="8" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxGistidin1">
+        <item row="14" column="2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
-         </widget>
-        </item>
-        <item row="12" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin5">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="13" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein1">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="4">
-         <widget class="QLabel" name="labelComp3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Компонент 3</string>
-          </property>
-         </widget>
-        </item>
-        <item row="15" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxTriptofan3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="16" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin5">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Введите пропорции компонентов:</string>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
          </widget>
         </item>
@@ -679,341 +1258,109 @@
           </property>
          </widget>
         </item>
-        <item row="4" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxPropComp2">
+        <item row="7" column="6">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxValin5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
-          <property name="suffix">
-           <string> г</string>
-          </property>
-         </widget>
-        </item>
-        <item row="14" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxTreonin3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxValin4">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="15" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxTriptofan1">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxIzoleycin3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="12" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLizin3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="16" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxFenilalaninTirozin1">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="13" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxMetioninCistein3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxProteinsComp4">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="11" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="11" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin1">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
          </widget>
         </item>
         <item row="4" column="6">
          <widget class="QDoubleSpinBox" name="doubleSpinBoxPropComp5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="11" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLeycin2">
+        <item row="17" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="Line" name="line">
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Plain</enum>
-        </property>
-        <property name="lineWidth">
-         <number>2</number>
-        </property>
-        <property name="midLineWidth">
-         <number>0</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QGridLayout" name="gridLayout_3">
-        <item row="6" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega3_1">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
           </property>
          </widget>
         </item>
-        <item row="1" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_22">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Введите кол-во полиненасыщенных жирных кислот на 100г (каждого) компонента:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids2">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega3_3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega6_4">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids1">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="2">
+        <item row="21" column="2">
          <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega6_1">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="1" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids4">
+        <item row="18" column="6">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids5">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="6" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega3_2">
+        <item row="21" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega6_4">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
          </widget>
         </item>
-        <item row="5" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega6_2">
+        <item row="0" column="2">
+         <widget class="QSpinBox" name="spinBoxComp">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
-         </widget>
-        </item>
-        <item row="3" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids1">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>5</number>
+          </property>
+          <property name="value">
+           <number>5</number>
           </property>
          </widget>
         </item>
-        <item row="6" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega3_4">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids5">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_20">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Введите кол-во насыщенных жирных кислот на 100г (каждого) компонента:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="0">
-         <widget class="QLabel" name="label_23">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Введите омега-6 на 100г каждого компонента:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids1">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega6_3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="6">
+        <item row="22" column="6">
          <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega3_5">
           <property name="font">
            <font>
@@ -1022,174 +1369,62 @@
           </property>
          </widget>
         </item>
-        <item row="7" column="0">
-         <widget class="QPushButton" name="pushButtonCalculate">
+        <item row="8" column="5">
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxGistidin4">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="14" column="0">
+         <widget class="QLabel" name="label_16">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
            </font>
           </property>
           <property name="text">
-           <string>ВЫЧИСЛИТЬ</string>
-          </property>
-          <property name="autoDefault">
-           <bool>false</bool>
-          </property>
-          <property name="default">
-           <bool>true</bool>
-          </property>
-          <property name="flat">
-           <bool>false</bool>
+           <string>Введите Треонин:</string>
           </property>
          </widget>
         </item>
-        <item row="5" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxOmega6_5">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
+        <item row="10" column="1">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
-         </widget>
-        </item>
-        <item row="4" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids4">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
           </property>
-         </widget>
-        </item>
-        <item row="3" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids5">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
           </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_21">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Введите кол-во мононенасыщенных жирных кислот на 100г (каждого) компонента:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="0">
-         <widget class="QLabel" name="label_24">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Введите омега-3 на 100г каждого компонента:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids2">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxPolyunsaturatedFattyAcids2">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxSaturatedFattyAcids5">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxMonounsaturatedFattyAcids4">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_19">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Введите кол-во липидов на 100г (каждого) компонента:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp1">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="3">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp2">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="4">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="5">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp4">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="6">
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLypidsComp5">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-         </widget>
+         </spacer>
         </item>
        </layout>
       </item>
      </layout>
+    </item>
+    <item row="0" column="1">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
     </item>
    </layout>
   </widget>

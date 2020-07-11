@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -8,13 +8,17 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    defaultWindowSize = size();
+    listCompLabels << ui->labelComp1
+                   << ui->labelComp2
+                   << ui->labelComp3
+                   << ui->labelComp4
+                   << ui->labelComp5;
 
     connect(ui->spinBoxComp, SIGNAL(valueChanged(int)),
             this, SLOT(on_spinBoxCalculate_valueChanged(int))
             );
 
-    //on_spinBoxCalculate_valueChanged(1); // исусственно убираем пока не нужные ряды
+    on_spinBoxCalculate_valueChanged(1); // исусственно убираем пока не нужные ряды
 
 }
 
@@ -23,60 +27,133 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_spinBoxCalculate_valueChanged(int value)
 {
-
-    // ВЕРНУТЬ УЖЕ СКРЫТЫЕ КОЛОННЫ ПРИ УВЕЛИЧЕНИИ value!
+    static int earlyer_value = 1;
 
     switch (value)
     {
     case 1:
-        for (int i = 2; i <= 5; ++i)
+        qDebug() << "case 1 is called";
+        for (int i = value; i <= 5; ++i)
         {
             for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
             {
-                currentSpinBox->hide();
+                if (currentSpinBox->isVisible())
+                    currentSpinBox->hide();
             }
+            if (i != 1 && listCompLabels[i-1]->isVisible())
+                listCompLabels[i-1]->hide();
         }
+
+        changeLabelsFor1Comp();
         break;
 
     case 2:
-        for (int i = 3; i <= 5; ++i)
+        if (value < earlyer_value)
         {
-            for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
+            for (int i = 3; i <= 5; ++i)
             {
-                currentSpinBox->hide();
+                for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
+                {
+                    if (currentSpinBox->isVisible())
+                        currentSpinBox->hide();
+                }
+                if (listCompLabels[i-1]->isVisible())
+                    listCompLabels[i-1]->hide();
             }
         }
+        else
+        {
+            for (int i = earlyer_value; i <= value; ++i)
+            {
+                for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
+                {
+                    if (!currentSpinBox->isVisible())
+                        currentSpinBox->show();
+                }
+                if (!listCompLabels[i-1]->isVisible())
+                    listCompLabels[i-1]->show();
+            }
+        }
+
         break;
 
     case 3:
-        for (int i = 4; i <= 5; ++i)
+        if (value < earlyer_value)
         {
-            for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
+            for (int i = 4; i <= 5; ++i)
             {
-                currentSpinBox->hide();
+                for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
+                {
+                    currentSpinBox->hide();
+                }
+                if (listCompLabels[i-1]->isVisible())
+                    listCompLabels[i-1]->hide();
             }
         }
+        else
+        {
+            for (int i = earlyer_value; i <= value; ++i)
+            {
+                for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
+                {
+                    if (!currentSpinBox->isVisible())
+                        currentSpinBox->show();
+                }
+                if (!listCompLabels[i-1]->isVisible())
+                    listCompLabels[i-1]->show();
+            }
+        }
+
         break;
 
     case 4:
-        for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(5))
+        if (value < earlyer_value)
         {
-            currentSpinBox->hide();
+            for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(5))
+            {
+                currentSpinBox->hide();
+            }
+            if (listCompLabels[4]->isVisible())
+                listCompLabels[4]->hide();
         }
+        else
+        {
+            for (int i = earlyer_value; i <= value; ++i)
+            {
+                for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
+                {
+                    if (!currentSpinBox->isVisible())
+                        currentSpinBox->show();
+                }
+                if (!listCompLabels[i-1]->isVisible())
+                    listCompLabels[i-1]->show();
+            }
+        }
+
         break;
 
     case 5:
-
-
+        // тут только увеличение
+        for (int i = earlyer_value; i <= value; ++i)
+        {
+            for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
+            {
+                if (!currentSpinBox->isVisible())
+                    currentSpinBox->show();
+            }
+            if (!listCompLabels[i-1]->isVisible())
+                listCompLabels[i-1]->show();
+        }
         break;
     }
 
-    static int earlyer_value = value;
+    if (value != 1)
+        changeLabelsForMultComp();
 
-    // TODO: (Опционально) При удалении/добавлении менять ширину окна
+    resize(minimumSize());
+    earlyer_value = value;
 }
 
 QList<QDoubleSpinBox*> MainWindow::getColumnOfCompSpinboxes(int column)
@@ -164,4 +241,28 @@ QList<QDoubleSpinBox*> MainWindow::getColumnOfCompSpinboxes(int column)
         break;
     }
     return QList<QDoubleSpinBox*>();
+}
+
+void MainWindow::changeLabelsFor1Comp()
+{
+    ui->label_2->setText("Введите пропорции компонента:");
+    ui->label_3->setText("Введите кол-во белка на 100г компонента:");
+    ui->label_19->setText("Введите кол-во липидов на 100г компонента:");
+    ui->label_20->setText("Введите кол-во насыщенных жирных кислот на 100г компонента:");
+    ui->label_21->setText("Введите кол-во мононенасыщенных жирных кислот на 100г компонента:");
+    ui->label_22->setText("Введите кол-во полиненасыщенных жирных кислот на 100г компонента:");
+    ui->label_23->setText("Введите омега-6 на 100г компонента:");
+    ui->label_24->setText("Введите омега-3 на 100г компонента:");
+}
+
+void MainWindow::changeLabelsForMultComp()
+{
+    ui->label_2->setText("Введите пропорции компонентов:");
+    ui->label_3->setText("Введите кол-во белка на 100г каждого компонента:");
+    ui->label_19->setText("Введите кол-во липидов на 100г каждого компонента:");
+    ui->label_20->setText("Введите кол-во насыщенных жирных кислот на 100г каждого компонента:");
+    ui->label_21->setText("Введите кол-во мононенасыщенных жирных кислот на 100г каждого компонента:");
+    ui->label_22->setText("Введите кол-во полиненасыщенных жирных кислот на 100г каждого компонента:");
+    ui->label_23->setText("Введите омега-6 на 100г каждого компонента:");
+    ui->label_24->setText("Введите омега-3 на 100г каждого компонента:");
 }
