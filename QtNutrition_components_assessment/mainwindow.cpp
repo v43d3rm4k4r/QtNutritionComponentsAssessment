@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
             this, SLOT(on_spinBoxComp_valueChanged(int))
             );
 
-
+    setTabOrder();
     on_spinBoxComp_valueChanged(1);
 
 }
@@ -49,7 +49,7 @@ void MainWindow::on_spinBoxComp_valueChanged(int value)
 
         ui->doubleSpinBoxPropComp1->setValue(1.00);
         ui->doubleSpinBoxPropComp1->setEnabled(false);
-        setTabOrder(value);
+
         changeLabelsFor1Comp();
         break;
 
@@ -80,7 +80,7 @@ void MainWindow::on_spinBoxComp_valueChanged(int value)
                     listCompLabels[i-1]->show();
             }
         }
-        setTabOrder(value);
+
         break;
 
     case 3:
@@ -109,7 +109,7 @@ void MainWindow::on_spinBoxComp_valueChanged(int value)
                     listCompLabels[i-1]->show();
             }
         }
-        setTabOrder(value);
+
         break;
 
     case 4:
@@ -135,7 +135,7 @@ void MainWindow::on_spinBoxComp_valueChanged(int value)
                     listCompLabels[i-1]->show();
             }
         }
-        setTabOrder(value);
+
         break;
 
     case 5:
@@ -150,7 +150,7 @@ void MainWindow::on_spinBoxComp_valueChanged(int value)
             if (!listCompLabels[i-1]->isVisible())
                 listCompLabels[i-1]->show();
         }
-        setTabOrder(value);
+
         break;
     }
 
@@ -297,59 +297,29 @@ void MainWindow::changeLabelsForMultComp()
     ui->label_24->setText("Введите омега-3 на 100г каждого компонента:");
 }
 
-void MainWindow::setTabOrder(int column)
+void MainWindow::setTabOrder()
 {
-    const size_t ROWS = 17;
-    QList<QDoubleSpinBox*> list = getColumnOfCompSpinboxes(column);
+    const uint8_t ROWS = 17;
 
-    switch (column)
+    QVector<QList<QDoubleSpinBox*>> vCols;
+
+    for (uint8_t i = 1; i <= 5; i++)
     {
-    case 1:
-        for (size_t i = 1; i < ROWS; ++i)
+        vCols << getColumnOfCompSpinboxes(i);
+    }
+
+    for (uint8_t cols = 1; cols < 5; ++cols)
+    {
+        for (uint8_t rows = 1; rows < ROWS; ++rows)
+            QWidget::setTabOrder(vCols[cols-1][rows-1], vCols[cols-1][rows]);
+
+        if (cols == 4)
         {
-            QWidget::setTabOrder(list[i-1], list[i]);
+            for (uint8_t rows = 1; rows < ROWS; ++rows)
+                QWidget::setTabOrder(vCols[4][rows-1], vCols[4][rows]);
         }
 
-        break;
-
-    case 2:
-        for (size_t i = 2; i < ROWS; ++i)
-        {
-            QWidget::setTabOrder(list[i-2], list[i-1]);
-            QWidget::setTabOrder(list[i-1], list[i]);
-        }
-
-        break;
-
-    case 3:
-        for (size_t i = 3; i < ROWS; ++i)
-        {
-            QWidget::setTabOrder(list[i-3], list[i-2]);
-            QWidget::setTabOrder(list[i-2], list[i-1]);
-            QWidget::setTabOrder(list[i-1], list[i]);
-        }
-
-        break;
-
-    case 4:
-        for (size_t i = 4; i < ROWS; ++i)
-        {
-            QWidget::setTabOrder(list[i-4], list[i-3]);
-            QWidget::setTabOrder(list[i-3], list[i-2]);
-            QWidget::setTabOrder(list[i-2], list[i-1]);
-            QWidget::setTabOrder(list[i-1], list[i]);
-        }
-
-        break;
-
-    case 5:
-        for (size_t i = 5; i < ROWS; ++i)
-        {
-            QWidget::setTabOrder(list[i-5], list[i-4]);
-            QWidget::setTabOrder(list[i-4], list[i-3]);
-            QWidget::setTabOrder(list[i-3], list[i-2]);
-            QWidget::setTabOrder(list[i-2], list[i-1]);
-            QWidget::setTabOrder(list[i-1], list[i]);
-        }
+        // соединяем с началом следующей колонны
+        QWidget::setTabOrder(vCols[cols-1][ROWS-1], vCols[cols][0]);
     }
 }

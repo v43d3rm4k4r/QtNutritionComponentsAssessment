@@ -17,7 +17,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow* ui;
 
     size_t comp_num; // кол-во компонентов
 
@@ -66,7 +66,7 @@ private:
     void initMainWindow();
     void changeLabelsFor1Comp();
     void changeLabelsForMultComp();
-    void setTabOrder(int columm);
+    void setTabOrder();
 
 
 public:
