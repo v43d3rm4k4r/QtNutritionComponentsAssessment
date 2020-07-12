@@ -38,6 +38,12 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
          </widget>
         </item>
         <item row="7" column="3">
@@ -47,8 +53,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -59,8 +68,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -71,8 +83,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -83,8 +98,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -95,8 +113,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -107,8 +128,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -119,8 +143,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -131,8 +158,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -155,8 +185,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -167,6 +200,12 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
          </widget>
         </item>
         <item row="20" column="3">
@@ -176,8 +215,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -212,8 +254,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -224,8 +269,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -236,8 +284,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -248,8 +299,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -266,8 +320,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>1.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -278,8 +335,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -290,8 +350,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -302,8 +365,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -332,8 +398,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>1.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -344,6 +413,12 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
          </widget>
         </item>
         <item row="16" column="3">
@@ -353,8 +428,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -365,8 +443,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -377,8 +458,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -413,8 +497,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -449,8 +536,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -461,8 +551,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -485,8 +578,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -497,8 +593,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -533,8 +632,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -545,8 +647,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -557,8 +662,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -593,8 +701,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -605,8 +716,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -617,8 +731,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -630,10 +747,13 @@
            </font>
           </property>
           <property name="suffix">
-           <string> г</string>
+           <string/>
+          </property>
+          <property name="maximum">
+           <double>1.000000000000000</double>
           </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -644,8 +764,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -656,8 +779,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -668,8 +794,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -680,8 +809,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -692,8 +824,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -704,8 +839,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -734,8 +872,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -747,10 +888,13 @@
            </font>
           </property>
           <property name="suffix">
-           <string> г</string>
+           <string/>
+          </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
           </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -761,8 +905,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -773,8 +920,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -785,8 +935,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -809,8 +962,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -833,8 +989,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -845,8 +1004,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -857,8 +1019,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -869,8 +1034,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -881,8 +1049,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -908,8 +1079,11 @@
           <property name="decimals">
            <number>2</number>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -920,8 +1094,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -932,8 +1109,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -944,8 +1124,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -956,8 +1139,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -969,10 +1155,13 @@
            </font>
           </property>
           <property name="suffix">
-           <string> г</string>
+           <string/>
+          </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
           </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -990,10 +1179,13 @@
            </font>
           </property>
           <property name="suffix">
-           <string> г</string>
+           <string/>
+          </property>
+          <property name="maximum">
+           <double>1.000000000000000</double>
           </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1004,8 +1196,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1016,8 +1211,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1028,8 +1226,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1040,8 +1241,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1064,8 +1268,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1076,8 +1283,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1112,8 +1322,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1124,8 +1337,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1148,8 +1364,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1160,8 +1379,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1172,8 +1394,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1184,8 +1409,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1208,8 +1436,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1220,8 +1451,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1232,6 +1466,12 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
          </widget>
         </item>
         <item row="14" column="2">
@@ -1241,8 +1481,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1265,8 +1508,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1283,8 +1529,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>1.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1295,8 +1544,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1307,8 +1559,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1319,8 +1574,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1331,8 +1589,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -1356,7 +1617,7 @@
            <number>5</number>
           </property>
           <property name="value">
-           <number>2</number>
+           <number>1</number>
           </property>
          </widget>
         </item>
@@ -1367,6 +1628,12 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
          </widget>
         </item>
         <item row="8" column="5">
@@ -1376,8 +1643,11 @@
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>

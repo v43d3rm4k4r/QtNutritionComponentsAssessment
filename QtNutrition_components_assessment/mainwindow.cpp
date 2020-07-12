@@ -1,8 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDebug>
-#include <thread>
-#include <chrono>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,11 +19,8 @@ MainWindow::MainWindow(QWidget *parent)
             this, SLOT(on_spinBoxComp_valueChanged(int))
             );
 
-    std::this_thread::sleep_for(std::chrono::seconds(2));
 
-    initMainWindow();
-
-    //on_spinBoxComp_valueChanged(1);
+    on_spinBoxComp_valueChanged(1);
 
 }
 
@@ -40,18 +36,20 @@ void MainWindow::on_spinBoxComp_valueChanged(int value)
     switch (value)
     {
     case 1:
-        qDebug() << "case 1 is called";
         for (int i = value; i <= 5; ++i)
         {
             for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
             {
-                if (currentSpinBox->isVisible())
+                if (i != 1)
                     currentSpinBox->hide();
             }
-            if (i != 1 && listCompLabels[i-1]->isVisible())
+            if (i != 1)
                 listCompLabels[i-1]->hide();
         }
 
+        ui->doubleSpinBoxPropComp1->setValue(1.00);
+        ui->doubleSpinBoxPropComp1->setEnabled(false);
+        setTabOrder(value);
         changeLabelsFor1Comp();
         break;
 
@@ -82,7 +80,7 @@ void MainWindow::on_spinBoxComp_valueChanged(int value)
                     listCompLabels[i-1]->show();
             }
         }
-
+        setTabOrder(value);
         break;
 
     case 3:
@@ -111,7 +109,7 @@ void MainWindow::on_spinBoxComp_valueChanged(int value)
                     listCompLabels[i-1]->show();
             }
         }
-
+        setTabOrder(value);
         break;
 
     case 4:
@@ -137,7 +135,7 @@ void MainWindow::on_spinBoxComp_valueChanged(int value)
                     listCompLabels[i-1]->show();
             }
         }
-
+        setTabOrder(value);
         break;
 
     case 5:
@@ -152,11 +150,16 @@ void MainWindow::on_spinBoxComp_valueChanged(int value)
             if (!listCompLabels[i-1]->isVisible())
                 listCompLabels[i-1]->show();
         }
+        setTabOrder(value);
         break;
     }
 
     if (value != 1)
+    {
         changeLabelsForMultComp();
+        ui->doubleSpinBoxPropComp1->setValue(0.0);
+        ui->doubleSpinBoxPropComp1->setEnabled(true);
+    }
 
     resize(minimumSize());
     earlyer_value = value;
@@ -166,6 +169,27 @@ QList<QDoubleSpinBox*> MainWindow::getColumnOfCompSpinboxes(int column)
 {
     switch (column)
     {
+    // only for MainWindow::setTabOrder()
+    case 1:
+        return QList<QDoubleSpinBox*>()  << ui->doubleSpinBoxPropComp1
+                                         << ui->doubleSpinBoxProteinsComp1
+                                         << ui->doubleSpinBoxValin1
+                                         << ui->doubleSpinBoxGistidin1
+                                         << ui->doubleSpinBoxIzoleycin1
+                                         << ui->doubleSpinBoxLeycin1
+                                         << ui->doubleSpinBoxLizin1
+                                         << ui->doubleSpinBoxMetioninCistein1
+                                         << ui->doubleSpinBoxTreonin1
+                                         << ui->doubleSpinBoxTriptofan1
+                                         << ui->doubleSpinBoxFenilalaninTirozin1
+                                         << ui->doubleSpinBoxLypidsComp1
+                                         << ui->doubleSpinBoxSaturatedFattyAcids1
+                                         << ui->doubleSpinBoxMonounsaturatedFattyAcids1
+                                         << ui->doubleSpinBoxPolyunsaturatedFattyAcids1
+                                         << ui->doubleSpinBoxOmega6_1
+                                         << ui->doubleSpinBoxOmega3_1;
+        break;
+
     case 2:
         return QList<QDoubleSpinBox*>()  << ui->doubleSpinBoxPropComp2
                                          << ui->doubleSpinBoxProteinsComp2
@@ -273,14 +297,59 @@ void MainWindow::changeLabelsForMultComp()
     ui->label_24->setText("Введите омега-3 на 100г каждого компонента:");
 }
 
-void MainWindow::initMainWindow()
+void MainWindow::setTabOrder(int column)
 {
-    for (int i = 3; i <= 5; ++i)
+    const size_t ROWS = 17;
+    QList<QDoubleSpinBox*> list = getColumnOfCompSpinboxes(column);
+
+    switch (column)
     {
-        for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
+    case 1:
+        for (size_t i = 1; i < ROWS; ++i)
         {
-            currentSpinBox->hide();
+            QWidget::setTabOrder(list[i-1], list[i]);
         }
-        listCompLabels[i-1]->hide();
+
+        break;
+
+    case 2:
+        for (size_t i = 2; i < ROWS; ++i)
+        {
+            QWidget::setTabOrder(list[i-2], list[i-1]);
+            QWidget::setTabOrder(list[i-1], list[i]);
+        }
+
+        break;
+
+    case 3:
+        for (size_t i = 3; i < ROWS; ++i)
+        {
+            QWidget::setTabOrder(list[i-3], list[i-2]);
+            QWidget::setTabOrder(list[i-2], list[i-1]);
+            QWidget::setTabOrder(list[i-1], list[i]);
+        }
+
+        break;
+
+    case 4:
+        for (size_t i = 4; i < ROWS; ++i)
+        {
+            QWidget::setTabOrder(list[i-4], list[i-3]);
+            QWidget::setTabOrder(list[i-3], list[i-2]);
+            QWidget::setTabOrder(list[i-2], list[i-1]);
+            QWidget::setTabOrder(list[i-1], list[i]);
+        }
+
+        break;
+
+    case 5:
+        for (size_t i = 5; i < ROWS; ++i)
+        {
+            QWidget::setTabOrder(list[i-5], list[i-4]);
+            QWidget::setTabOrder(list[i-4], list[i-3]);
+            QWidget::setTabOrder(list[i-3], list[i-2]);
+            QWidget::setTabOrder(list[i-2], list[i-1]);
+            QWidget::setTabOrder(list[i-1], list[i]);
+        }
     }
 }

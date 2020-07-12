@@ -66,6 +66,7 @@ private:
     void initMainWindow();
     void changeLabelsFor1Comp();
     void changeLabelsForMultComp();
+    void setTabOrder(int columm);
 
 
 public:
