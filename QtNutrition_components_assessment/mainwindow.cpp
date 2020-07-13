@@ -1,8 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QMessageBox>
 #include <QDebug>
 
-
+//======================================================================================================
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -16,20 +17,23 @@ MainWindow::MainWindow(QWidget *parent)
                    << ui->labelComp5;
 
     connect(ui->spinBoxComp, SIGNAL(valueChanged(int)),
-            this, SLOT(on_spinBoxComp_valueChanged(int))
+            this, SLOT(spinBoxComp_valueChanged(int))
+            );
+    connect(ui->pushButtonCalculate, SIGNAL(clicked()),
+            this, SLOT(pushButtonCalculate_clicked())
             );
 
     setTabOrder();
-    on_spinBoxComp_valueChanged(1);
+    spinBoxComp_valueChanged(1);
 
 }
-
+//======================================================================================================
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-void MainWindow::on_spinBoxComp_valueChanged(int value)
+//======================================================================================================
+void MainWindow::spinBoxComp_valueChanged(int value)
 {
     static int earlyer_value = 1;
 
@@ -164,7 +168,7 @@ void MainWindow::on_spinBoxComp_valueChanged(int value)
     resize(minimumSize());
     earlyer_value = value;
 }
-
+//======================================================================================================
 QList<QDoubleSpinBox*> MainWindow::getColumnOfCompSpinboxes(int column)
 {
     switch (column)
@@ -272,7 +276,7 @@ QList<QDoubleSpinBox*> MainWindow::getColumnOfCompSpinboxes(int column)
     }
     return QList<QDoubleSpinBox*>();
 }
-
+//======================================================================================================
 void MainWindow::changeLabelsFor1Comp()
 {
     ui->label_2->setText("Введите пропорции компонента:");
@@ -284,7 +288,7 @@ void MainWindow::changeLabelsFor1Comp()
     ui->label_23->setText("Введите омега-6 на 100г компонента:");
     ui->label_24->setText("Введите омега-3 на 100г компонента:");
 }
-
+//======================================================================================================
 void MainWindow::changeLabelsForMultComp()
 {
     ui->label_2->setText("Введите пропорции компонентов:");
@@ -296,7 +300,7 @@ void MainWindow::changeLabelsForMultComp()
     ui->label_23->setText("Введите омега-6 на 100г каждого компонента:");
     ui->label_24->setText("Введите омега-3 на 100г каждого компонента:");
 }
-
+//======================================================================================================
 void MainWindow::setTabOrder()
 {
     const uint8_t ROWS = 17;
@@ -322,4 +326,22 @@ void MainWindow::setTabOrder()
         // соединяем с началом следующей колонны
         QWidget::setTabOrder(vCols[cols-1][ROWS-1], vCols[cols][0]);
     }
+}
+//======================================================================================================
+void MainWindow::pushButtonCalculate_clicked()
+{
+    double sum = ui->doubleSpinBoxPropComp1->value()   + ui->doubleSpinBoxPropComp2->value()
+                 + ui->doubleSpinBoxPropComp3->value() + ui->doubleSpinBoxPropComp4->value()
+                 + ui->doubleSpinBoxPropComp5->value();
+
+    qDebug() << sum;
+
+    if (!qFuzzyCompare(sum, 1.0))
+    {
+        QMessageBox::warning(this, tr("Ошибка"),
+                            tr("Сумма пропорций компонентов должна равняться 1."), QMessageBox::Ok);
+        return;
+    }
+
+
 }

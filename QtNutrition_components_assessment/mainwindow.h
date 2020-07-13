@@ -3,6 +3,7 @@
 #include <QMainWindow>
 #include <QDoubleSpinBox>
 #include <QLabel>
+#include "CalculateModule.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -11,7 +12,7 @@ QT_END_NAMESPACE
 #define AMI 9      // количество аминокислот
 #define LIP_PROP 5 // липидные хар-ки (аналог аминокислот)
 #define MAX_COMP 5 // максимальное количество компонентов
-
+//======================================================================================================
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -51,7 +52,6 @@ private:
     double comparable_redundancy_ratio = 0.0; // g
     double balance_index = 0.0; // s
     double k_general = 0.0;
-    int i; // счётчик, номер строки с аминокислотой
 
     /*ЛИПИДЫ*/
     double recount_lip[MAX_COMP][LIP_PROP] = {{0.0}};
@@ -68,12 +68,11 @@ private:
     void changeLabelsForMultComp();
     void setTabOrder();
 
+private slots:
+    void spinBoxComp_valueChanged(int value);
+    void pushButtonCalculate_clicked();
 
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-
-private slots:
-    void on_spinBoxComp_valueChanged(int value);
 };

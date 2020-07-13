@@ -20,6 +20,7 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    CalculateModule.h \
     mainwindow.h
 
 FORMS += \
