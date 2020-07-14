@@ -2,6 +2,10 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QDebug>
+#include "CalculateModule.h"
+#include <chrono>
+#include <thread>
+#include <QResizeEvent>
 
 //======================================================================================================
 MainWindow::MainWindow(QWidget *parent)
@@ -22,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButtonCalculate, SIGNAL(clicked()),
             this, SLOT(pushButtonCalculate_clicked())
             );
+
 
     setTabOrder();
     spinBoxComp_valueChanged(1);
@@ -165,7 +170,11 @@ void MainWindow::spinBoxComp_valueChanged(int value)
         ui->doubleSpinBoxPropComp1->setEnabled(true);
     }
 
-    resize(minimumSize());
+
+    //resize(minimumSize());
+    qDebug() << size().width();
+    qDebug() << size().height();
+
     earlyer_value = value;
 }
 //======================================================================================================
@@ -343,5 +352,7 @@ void MainWindow::pushButtonCalculate_clicked()
         return;
     }
 
+    CalculateModule cModule;
 
+    //Result result = cModule.mainCalculations(this);
 }

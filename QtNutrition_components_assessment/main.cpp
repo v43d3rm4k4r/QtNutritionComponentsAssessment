@@ -8,12 +8,13 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    MainWindow w;
-    w.setWindowTitle("NUTRITION COMPONENTS ASSESSMENT");
+    MainWindow window;
 
-    w.resize(w.minimumSize());
+    window.setWindowTitle("NUTRITION COMPONENTS ASSESSMENT");
 
-    w.show();
+    window.resize(924, 663);
+
+    window.show();
 
     return app.exec();
 }
