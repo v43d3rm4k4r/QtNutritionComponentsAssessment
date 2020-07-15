@@ -347,8 +347,8 @@ void MainWindow::pushButtonCalculate_clicked()
 
     if (!qFuzzyCompare(sum, 1.0))
     {
-        QMessageBox::warning(this, tr("Ошибка"),
-                            tr("Сумма пропорций компонентов должна равняться 1."), QMessageBox::Ok);
+        QMessageBox::warning(this, "Ошибка",
+                            "Сумма пропорций компонентов должна равняться 1.", QMessageBox::Ok);
         return;
     }
 
