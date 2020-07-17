@@ -3,11 +3,12 @@
 #include <QMainWindow>
 #include <QDoubleSpinBox>
 #include <QLabel>
-//#include "CalculateModule.h"
+#include "CalculateModule.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; class CalculateModule;}
+namespace Ui { class MainWindow;}
 QT_END_NAMESPACE
+
 
 //======================================================================================================
 class MainWindow : public QMainWindow
@@ -15,6 +16,8 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 private:
+    Summary input;
+
     Ui::MainWindow* ui;
 
     QList<QDoubleSpinBox*> getColumnOfCompSpinboxes(int column);
@@ -32,5 +35,6 @@ private slots:
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    friend class CalculateModule;
+
+    const Summary& setNgetSummaryInput() noexcept;
 };

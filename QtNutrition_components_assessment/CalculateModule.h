@@ -1,15 +1,15 @@
 #pragma once
 
-#include "mainwindow.h"
-
 #include <iostream>
+#include <QObject>
+#include "mainwindow.h"
 
 
 #define AMI 9      // количество аминокислот
 #define LIP_PROP 5 // липидные хар-ки (аналог аминокислот)
 #define MAX_COMP 5 // максимальное количество компонентов
 //======================================================================================================
-struct Result
+struct Summary
 {
     size_t comp_num; // кол-во компонентов
 
@@ -52,19 +52,21 @@ struct Result
     double omega6 = 0.0;
 };
 //======================================================================================================
-class CalculateModule
+class CalculateModule : public QObject
 {
+    Q_OBJECT
 private:
-    Result result;
+    Summary result;
 
     // методы вычислений
 
 
 public:
-    // here we fill in Result structure
-    /*Result& mainCalculations(const MainWindow* window)
-    {
-        window->ui->;
-    }*/
+    // вызываем в конструкторе все методы вычислений
+    explicit CalculateModule(const Summary& input, MainWindow* parent = nullptr);
+
+    const Summary& getResult() const;
+
+
 
 };

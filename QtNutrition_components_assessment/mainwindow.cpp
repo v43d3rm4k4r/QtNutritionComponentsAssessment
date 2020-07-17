@@ -9,8 +9,7 @@
 
 //======================================================================================================
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
@@ -352,7 +351,19 @@ void MainWindow::pushButtonCalculate_clicked()
         return;
     }
 
-    CalculateModule cModule;
+    CalculateModule* cModule = new CalculateModule(setNgetSummaryInput(), this);
 
-    //Result result = cModule.mainCalculations(this);
+
+}
+//======================================================================================================
+const Summary& MainWindow::setNgetSummaryInput() noexcept
+{
+    input.comp_num = ui->spinBoxComp->value();
+
+
+
+
+
+
+    return input;
 }
