@@ -1,7 +1,7 @@
 #include <CalculateModule.h>
 
-CalculateModule::CalculateModule(const Summary& input, MainWindow* parent)
-    : MainWindow{parent}, result{input}
+CalculateModule::CalculateModule(const Summary& input)
+    : result{input}
 {
 
 }

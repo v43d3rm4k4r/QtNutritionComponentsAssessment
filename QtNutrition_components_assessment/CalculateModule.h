@@ -52,9 +52,8 @@ struct Summary
     double omega6 = 0.0;
 };
 //======================================================================================================
-class CalculateModule : public QObject
+class CalculateModule
 {
-    Q_OBJECT
 private:
     Summary result;
 
@@ -63,7 +62,7 @@ private:
 
 public:
     // вызываем в конструкторе все методы вычислений
-    explicit CalculateModule(const Summary& input, MainWindow* parent = nullptr);
+    explicit CalculateModule(const Summary& input);
 
     const Summary& getResult() const;
 

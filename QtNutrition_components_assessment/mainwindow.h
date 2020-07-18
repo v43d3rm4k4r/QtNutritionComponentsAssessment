@@ -17,6 +17,7 @@ class MainWindow : public QMainWindow
 
 private:
     Summary input;
+    CalculateModule* cModule;
 
     Ui::MainWindow* ui;
 
@@ -34,7 +35,7 @@ private slots:
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    virtual ~MainWindow();
 
     const Summary& setNgetSummaryInput() noexcept;
 };

@@ -32,11 +32,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 }
 //======================================================================================================
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
-//======================================================================================================
 void MainWindow::spinBoxComp_valueChanged(int value)
 {
     static int earlyer_value = 1;
@@ -351,7 +346,7 @@ void MainWindow::pushButtonCalculate_clicked()
         return;
     }
 
-    CalculateModule* cModule = new CalculateModule(setNgetSummaryInput(), this);
+    cModule = new CalculateModule(setNgetSummaryInput());
 
 
 }
@@ -366,4 +361,10 @@ const Summary& MainWindow::setNgetSummaryInput() noexcept
 
 
     return input;
+}
+//======================================================================================================
+MainWindow::~MainWindow()
+{
+    delete ui;
+    delete cModule;
 }
