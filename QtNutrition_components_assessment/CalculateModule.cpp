@@ -1,7 +1,7 @@
 #include <CalculateModule.h>
 
-CalculateModule::CalculateModule(const Summary& input)
-    : result{input}
+CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input)
+    : input{input}
 {
 
 }

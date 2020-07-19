@@ -56,13 +56,14 @@ class CalculateModule
 {
 private:
     Summary result;
+    QVector<QList<QDoubleSpinBox*>> input;
 
     // методы вычислений
 
 
 public:
     // вызываем в конструкторе все методы вычислений
-    explicit CalculateModule(const Summary& input);
+    explicit CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input);
 
     const Summary& getResult() const;
 

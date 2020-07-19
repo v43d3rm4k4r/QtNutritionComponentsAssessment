@@ -16,17 +16,17 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 private:
-    Summary input;
     CalculateModule* cModule;
 
     Ui::MainWindow* ui;
 
-    QList<QDoubleSpinBox*> getColumnOfCompSpinboxes(int column);
+    QList<QDoubleSpinBox*> getColumnOfCompSpinboxes(int column) const;
     QList<QLabel*> listCompLabels;
 
     void initMainWindow();
     void changeLabelsFor1Comp();
     void changeLabelsForMultComp();
+    QVector<QList<QDoubleSpinBox*>> getAllSpinBoxes() const;
     void setTabOrder();
 
 private slots:
@@ -36,6 +36,4 @@ private slots:
 public:
     MainWindow(QWidget *parent = nullptr);
     virtual ~MainWindow();
-
-    const Summary& setNgetSummaryInput() noexcept;
 };

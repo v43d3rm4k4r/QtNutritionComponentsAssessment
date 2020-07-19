@@ -172,7 +172,7 @@ void MainWindow::spinBoxComp_valueChanged(int value)
     earlyer_value = value;
 }
 //======================================================================================================
-QList<QDoubleSpinBox*> MainWindow::getColumnOfCompSpinboxes(int column)
+QList<QDoubleSpinBox*> MainWindow::getColumnOfCompSpinboxes(int column) const
 {
     switch (column)
     {
@@ -346,21 +346,19 @@ void MainWindow::pushButtonCalculate_clicked()
         return;
     }
 
-    cModule = new CalculateModule(setNgetSummaryInput());
-
+    cModule = new CalculateModule(getAllSpinBoxes());
 
 }
 //======================================================================================================
-const Summary& MainWindow::setNgetSummaryInput() noexcept
+QVector<QList<QDoubleSpinBox*>> MainWindow::getAllSpinBoxes() const
 {
-    input.comp_num = ui->spinBoxComp->value();
+    QVector<QList<QDoubleSpinBox*>> allSpinBoxes;
 
-
-
-
-
-
-    return input;
+    for (uint8_t i = 1; i <= 5; i++)
+    {
+        allSpinBoxes << getColumnOfCompSpinboxes(i);
+    }
+    return allSpinBoxes;
 }
 //======================================================================================================
 MainWindow::~MainWindow()
