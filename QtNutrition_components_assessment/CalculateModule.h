@@ -1,9 +1,9 @@
 #pragma once
 
 #include <iostream>
-#include <QObject>
-#include "mainwindow.h"
-
+#include <QVector>
+#include <QList>
+#include <QDoubleSpinBox>
 
 #define AMI 9      // количество аминокислот
 #define LIP_PROP 5 // липидные хар-ки (аналог аминокислот)
@@ -11,7 +11,7 @@
 //======================================================================================================
 struct Summary
 {
-    size_t comp_num; // кол-во компонентов
+    int comp_num = 0; // кол-во компонентов
 
     const double fao_voz2007[AMI] = {3.9, 1.5, 3.0, 5.9, 4.5, 2.2, 2.3, 0.6, 3.8};
     const double fao_voz2008[MAX_COMP] = {33.33, 33.33, 33.33, 6.67, 26.67};
@@ -23,8 +23,6 @@ struct Summary
     /*ЛИПИДЫ*/
     double lipids[MAX_COMP] = {0.0};
     double ultimate[MAX_COMP][LIP_PROP] = {{0.0}};
-
-
 
     /*БЕЛКИ*/
     double akp[AMI] = {0.0};
@@ -55,15 +53,18 @@ struct Summary
 class CalculateModule
 {
 private:
-    Summary result;
     QVector<QList<QDoubleSpinBox*>> input;
+    Summary result;
 
-    // методы вычислений
+    // CALCULATIONS
+    void calcInit(int comp_num);
 
+    /*ВЫЧИСЛЕНИЯ БЕЛКОВ*/
+    double calcRecountProteins(int col, double* protein, double comp);
 
 public:
     // вызываем в конструкторе все методы вычислений
-    explicit CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input);
+    explicit CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, int comp_num);
 
     const Summary& getResult() const;
 

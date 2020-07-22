@@ -346,7 +346,7 @@ void MainWindow::pushButtonCalculate_clicked()
         return;
     }
 
-    cModule = new CalculateModule(getAllSpinBoxes());
+    cModule = new CalculateModule(getAllSpinBoxes(), ui->spinBoxComp->value());
 
 }
 //======================================================================================================
