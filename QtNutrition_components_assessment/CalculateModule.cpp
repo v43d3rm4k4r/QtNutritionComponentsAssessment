@@ -258,12 +258,12 @@ double CalculateModule::calcAKP(double* prop, double recount[][MAX_COMP], int ro
     throw CalcException(2);
 }
 //======================================================================================================
-inline double CalculateModule::calcAminoacidskor(double akp, double fao_voz2007) const noexcept
+double CalculateModule::calcAminoacidskor(double akp, double fao_voz2007) const noexcept
 {
     return akp / fao_voz2007 * 100;
 }
 //======================================================================================================
-inline double CalculateModule::calcFattyAcidPer100g(double fao_voz2007, double akp) const noexcept
+double CalculateModule::calcFattyAcidPer100g(double fao_voz2007, double akp) const noexcept
 {
     if (fao_voz2007 <= akp)
         return fao_voz2007 / akp;
@@ -273,7 +273,7 @@ inline double CalculateModule::calcFattyAcidPer100g(double fao_voz2007, double a
 //======================================================================================================
 
 //======================================================================================================
-inline double CalculateModule::calcKoefRation(double min_aminoacidskor, double aminoacidskor) const noexcept
+double CalculateModule::calcKoefRation(double min_aminoacidskor, double aminoacidskor) const noexcept
 {
     return min_aminoacidskor / aminoacidskor;
 }
