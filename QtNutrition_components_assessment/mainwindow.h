@@ -17,7 +17,6 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-private:
     CalculateModule* cModule;
 
     Ui::MainWindow* ui;

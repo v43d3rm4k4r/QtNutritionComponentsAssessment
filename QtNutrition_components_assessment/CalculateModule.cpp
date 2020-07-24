@@ -5,35 +5,62 @@ CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, i
 {
     calcInit(comp_num);
 
-
-    for (int row = 0; row < AMI; ++row)
+    try
     {
-        if (comp_num == 1)
+        for (int row = 0; row < AMI; ++row)
         {
-            result.recount[row][0] = calcRecountProteins(0, result.protein, result.comp[row][0]);
-        }
-        for (int col = 0; col < comp_num; ++col)
-        {
-            if (comp_num == 2)
+            if (comp_num == 1)
             {
-                result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                result.recount[row][0] = calcRecountProteins(0, result.protein, result.comp[row][0]);
             }
+            for (int col = 0; col < comp_num; ++col)
+            {
+                if (comp_num == 2)
+                {
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                }
+                if (comp_num == 3)
+                {
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                }
+                if (comp_num == 4)
+                {
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                }
+                if (comp_num == 5)
+                {
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+                }
 
+                result.akp[row] = calcAKP(result.prop, result.recount, row);
+                result.aminoacidskor[row] = calcAminoacidskor(result.akp[row], result.fao_voz2007[row]);
 
+            }
         }
-
-
-
-
 
     }
+    catch (std::exception& ex)
+    {
+        qDebug() << ex.what();
+    }
+
+
 
 
 
 }
 //======================================================================================================
-void CalculateModule::calcInit(int comp_num)
+void CalculateModule::calcInit(int comp_num) noexcept
 {
     result.comp_num = comp_num;
 
@@ -169,13 +196,69 @@ void CalculateModule::calcInit(int comp_num)
     }
 }
 //======================================================================================================
-void CalculateModule::calcRecountProteins(int col, double* protein, double comp) // col вместо sign
+double CalculateModule::calcRecountProteins(int col, double* protein, double comp) // col вместо sign
 {
     if (result.comp_num == 1)
-    {
+        return comp * 100 / protein[0];
+    //----------------------------------
+    if (result.comp_num == 2 && col == 0)
+        return comp * 100 / protein[0];
+    if (result.comp_num == 2 && col == 1)
+        return comp * 100 / protein[1];
+    //----------------------------------
+    if (result.comp_num == 3 && col == 0)
+        return comp * 100 / protein[0];
+    if (result.comp_num == 3 && col == 1)
+        return comp * 100 / protein[1];
+    if (result.comp_num == 3 && col == 2)
+        return comp * 100 / protein[2];
+    //----------------------------------
+    if (result.comp_num == 4 && col == 0)
+        return comp * 100 / protein[0];
+    if (result.comp_num == 4 && col == 1)
+        return comp * 100 / protein[1];
+    if (result.comp_num == 4 && col == 2)
+        return comp * 100 / protein[2];
+    if (result.comp_num == 4 && col == 3)
+        return comp * 100 / protein[3];
+    //----------------------------------
+    if (result.comp_num == 5 && col == 0)
+        return comp * 100 / protein[0];
+    if (result.comp_num == 5 && col == 1)
+        return comp * 100 / protein[1];
+    if (result.comp_num == 5 && col == 2)
+        return comp * 100 / protein[2];
+    if (result.comp_num == 5 && col == 3)
+        return comp * 100 / protein[3];
+    if (result.comp_num == 5 && col == 4)
+        return comp * 100 / protein[4];
 
-    }
+    throw CalcException(1);
 }
+//======================================================================================================
+double CalculateModule::calcAKP(double* prop, double recount[][MAX_COMP], int row)
+{
+    if (result.comp_num == 1)
+        return recount[row][0];
+    if (result.comp_num == 2)
+        return (prop[0] * recount[row][0]) + (prop[1] * recount[row][1]);
+    if (result.comp_num == 3)
+        return (prop[0] * recount[row][0]) + (prop[1] * recount[row][1]) + (prop[2] * recount[row][2]);
+    if (result.comp_num == 4)
+        return (prop[0] * recount[row][0]) + (prop[1] * recount[row][1]) + (prop[2] * recount[row][2])
+               + (prop[3] * recount[row][3]);
+    if (result.comp_num == 5)
+        return (prop[0] * recount[row][0]) + (prop[1] * recount[row][1]) + (prop[2] * recount[row][2])
+               + (prop[3] * recount[row][3]) + (prop[4] * recount[row][4]);
+
+    throw CalcException(2);
+}
+//======================================================================================================
+double CalculateModule::calcAminoacidskor(double akp, double fao_voz2007) noexcept
+{
+    return akp / fao_voz2007 * 100;
+}
+
 //======================================================================================================
 const Summary& CalculateModule::getResult() const
 {
