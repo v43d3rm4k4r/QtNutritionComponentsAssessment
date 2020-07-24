@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include <cmath>
 
 CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, int comp_num)
     : input{input}
@@ -35,7 +36,7 @@ CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, i
                     result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
             }
 
-            result.akp[row] = calcAKP(result.prop, result.recount, row);
+            result.akp[row] = calcAKP(row, result.prop, result.recount);
             result.aminoacidskor[row] = calcAminoacidskor(result.akp[row], result.fao_voz2007[row]);
             result.fatty_acid_per_100g[row] = calcFattyAcidPer100g(result.fao_voz2007[row], result.akp[row]);
         }
@@ -60,10 +61,61 @@ CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, i
     }
 
     /*ВЫЧИСЛЕНИЯ ЛИПИДОВ*/
+    try
+    {
+        for (int row = 0; row < LIP_PROP; ++row)
+        {
+            if (comp_num == 1)
+                result.recount_lip[row][0] = calcRecoutLip(0, result.lipids, result.ultimate[row][0]);
+            if (comp_num == 2)
+            {
+                for (int col = 0; col < result.comp_num; ++col)
+                    result.recount_lip[row][col] = calcRecoutLip(col, result.lipids, result.ultimate[row][col]);
+            }
+            if (comp_num == 3)
+            {
+                for (int col = 0; col < result.comp_num; ++col)
+                    result.recount_lip[row][col] = calcRecoutLip(col, result.lipids, result.ultimate[row][col]);
+            }
+            if (comp_num == 4)
+            {
+                for (int col = 0; col < result.comp_num; ++col)
+                    result.recount_lip[row][col] = calcRecoutLip(col, result.lipids, result.ultimate[row][col]);
+            }
+            if (comp_num == 5)
+            {
+                for (int col = 0; col < result.comp_num; ++col)
+                    result.recount_lip[row][col] = calcRecoutLip(col, result.lipids, result.ultimate[row][col]);
+            }
+            result.ratio_calc[row] = calcRatioCalc(row, result.prop, result.recount_lip);
+            result.lip_balance_ratio[row] = calcLipBalanceRatio(result.ratio_calc[row], result.fao_voz2008[row]);
+            calcFattyAcidCompliance(result.lip_balance_ratio, &result.fattyAcidComplianceResult2,
+                                                              &result.fattyAcidComplianceResult2);
+        }
+
+
+
+
+
+    }
+    catch (std::exception& ex)
+    {
+        qDebug() << ex.what();
+    }
+
+    /*
+        balance_index = Balance_Index(fatty_acid_per_100g);
+        k_general = Balance_Index_General(balance_index, biological_value, amino_acid_comp_ratio_coef);*/
+
+    result.kras = calcKRAS(calcAminoacidskorSum(result.aminoacidskor), min_aminoacidskor);
+    result.biological_value = calcBiologicalValue(result.kras);
+    result.amino_acid_comp_ratio_coef = calcAminoAcidCompRatioCoef(result.koef_ration, result.akp);
+    result.comparable_redundancy_ratio = calcComparableRedundancyRatio(result.akp, min_aminoacidskor, result.fao_voz2007);
+
 
 
 }
-//======================================================================================================
+//================================================================================================================================
 void CalculateModule::calcInit(int comp_num) noexcept
 {
     result.comp_num = comp_num;
@@ -199,8 +251,8 @@ void CalculateModule::calcInit(int comp_num) noexcept
         }
     }
 }
-//======================================================================================================
-double CalculateModule::calcRecountProteins(int col, double* protein, double comp) const // col вместо sign
+//================================================================================================================================
+double CalculateModule::calcRecountProteins(int col, double protein[], double comp) const // col вместо sign
 {
     if (result.comp_num == 1)
         return comp * 100 / protein[0];
@@ -239,8 +291,8 @@ double CalculateModule::calcRecountProteins(int col, double* protein, double com
 
     throw CalcException(1);
 }
-//======================================================================================================
-double CalculateModule::calcAKP(double* prop, double recount[][MAX_COMP], int row) const
+//================================================================================================================================
+double CalculateModule::calcAKP(int row, double prop[], double recount[][MAX_COMP]) const
 {
     if (result.comp_num == 1)
         return recount[row][0];
@@ -257,12 +309,12 @@ double CalculateModule::calcAKP(double* prop, double recount[][MAX_COMP], int ro
 
     throw CalcException(2);
 }
-//======================================================================================================
-double CalculateModule::calcAminoacidskor(double akp, double fao_voz2007) const noexcept
+//================================================================================================================================
+double CalculateModule::calcAminoacidskor(double akp, const double fao_voz2007) const noexcept
 {
     return akp / fao_voz2007 * 100;
 }
-//======================================================================================================
+//================================================================================================================================
 double CalculateModule::calcFattyAcidPer100g(double fao_voz2007, double akp) const noexcept
 {
     if (fao_voz2007 <= akp)
@@ -270,14 +322,138 @@ double CalculateModule::calcFattyAcidPer100g(double fao_voz2007, double akp) con
     else
         return akp / fao_voz2007;
 }
-//======================================================================================================
+//================================================================================================================================
+double CalculateModule::calcRecoutLip(int row, double lipids[], double ultimate) const
+{
+    if (result.comp_num == 1)
+        return ultimate * 100 / lipids[0];
+    //----------------------------------
+    if (result.comp_num == 2 && row == 0)
+        return ultimate * 100 / lipids[0];
+    if (result.comp_num == 2 && row == 1)
+        return ultimate * 100 / lipids[1];
+    //----------------------------------
+    if (result.comp_num == 3 && row == 0)
+        return ultimate * 100 / lipids[0];
+    if (result.comp_num == 3 && row == 1)
+        return ultimate * 100 / lipids[1];
+    if (result.comp_num == 3 && row == 2)
+        return ultimate * 100 / lipids[2];
+    //----------------------------------
+    if (result.comp_num == 4 && row == 0)
+        return ultimate * 100 / lipids[0];
+    if (result.comp_num == 4 && row == 1)
+        return ultimate * 100 / lipids[1];
+    if (result.comp_num == 4 && row == 2)
+        return ultimate * 100 / lipids[2];
+    if (result.comp_num == 4 && row == 3)
+        return ultimate * 100 / lipids[3];
+    //----------------------------------
+    if (result.comp_num == 5 && row == 0)
+        return ultimate * 100 / lipids[0];
+    if (result.comp_num == 5 && row == 1)
+        return ultimate * 100 / lipids[1];
+    if (result.comp_num == 5 && row == 2)
+        return ultimate * 100 / lipids[2];
+    if (result.comp_num == 5 && row == 3)
+        return ultimate * 100 / lipids[3];
+    if (result.comp_num == 5 && row == 4)
+        return ultimate * 100 / lipids[4];
 
-//======================================================================================================
+    throw CalcException(3);
+}
+//================================================================================================================================
 double CalculateModule::calcKoefRation(double min_aminoacidskor, double aminoacidskor) const noexcept
 {
     return min_aminoacidskor / aminoacidskor;
 }
-//======================================================================================================
+//================================================================================================================================
+double CalculateModule::calcRatioCalc(int row, double prop[], double recount_lip[][MAX_COMP]) const
+{
+    if (result.comp_num == 1)
+        return recount_lip[row][0];
+    if (result.comp_num == 2)
+        return (prop[0] * recount_lip[row][0]) + (prop[1] * recount_lip[row][1]);
+    if (result.comp_num == 3)
+        return (prop[0] * recount_lip[row][0]) + (prop[1] * recount_lip[row][1]) + (prop[2] * recount_lip[row][2]);
+    if (result.comp_num == 4)
+        return (prop[0] * recount_lip[row][0]) + (prop[1] * recount_lip[row][1]) + (prop[2] * recount_lip[row][2])
+               + (prop[3] * recount_lip[row][3]);
+    if (result.comp_num == 5)
+        return (prop[0] * recount_lip[row][0]) + (prop[1] * recount_lip[row][1]) + (prop[2] * recount_lip[row][2])
+               + (prop[3] * recount_lip[row][3]) + (prop[4] * recount_lip[row][4]);
+
+    throw CalcException(4);
+}
+//================================================================================================================================
+double CalculateModule::calcLipBalanceRatio(double ratio_calc, const double fao_voz2008) const noexcept
+{
+    if (ratio_calc <= fao_voz2008)
+        return ratio_calc / fao_voz2008;
+    else
+        return fao_voz2008 / ratio_calc;
+}
+//================================================================================================================================
+void CalculateModule::calcFattyAcidCompliance
+(double lip_balance_ratio[], double* fattyAcidComplianceResult1, double* fattyAcidComplianceResult2) const noexcept
+{
+    double multi1, multi2;
+    multi1 = multi2 = 1.0;
+
+    for (int i = 0; i < 3; ++i)
+        multi1 *= lip_balance_ratio[i];
+
+    *fattyAcidComplianceResult1 = pow(multi1, 1.0 / 3.0);
+
+    for (int i = 0; i < 5; i++)
+        multi2 *= lip_balance_ratio[i];
+
+    *fattyAcidComplianceResult2 = pow(multi2, 1.0 / 5.0);
+}
+//================================================================================================================================
+double CalculateModule::calcAminoacidskorSum(double aminoacidskor[]) const noexcept
+{
+    double sum = 0.0;
+    for(int i = 0; i < AMI; i++)
+    {
+        sum += *aminoacidskor;
+        aminoacidskor++;
+    }
+    return sum;
+}
+//================================================================================================================================
+double CalculateModule::calcKRAS(double aminoacidskor_sum, double min_aminoacidskor) const noexcept
+{
+    return (aminoacidskor_sum - (min_aminoacidskor * AMI)) / AMI;
+}
+//================================================================================================================================
+double CalculateModule::calcBiologicalValue(double kras)  const noexcept
+{
+    return 100 - kras;
+}
+//================================================================================================================================
+double CalculateModule::calcAminoAcidCompRatioCoef(double koef_ration[], double akp[]) const noexcept
+{
+    double numerator = 0.0;
+    double denominator = 0.0;
+    for (int row = 0; row < AMI; ++row)
+    {
+        numerator += koef_ration[row] * akp[row];
+        denominator += akp[row];
+    }
+    return numerator / denominator;
+}
+//================================================================================================================================
+double CalculateModule::calcComparableRedundancyRatio(double akp[], double min_aminoacidskor, const double fao_voz2007[]) const noexcept
+{
+    double numerator = 0.0;
+    for(int row = 0; row < AMI; ++row)
+    {
+        numerator += akp[row] - min_aminoacidskor / 100 * fao_voz2007[row];
+    }
+    return numerator / (min_aminoacidskor / 100);
+}
+//================================================================================================================================
 const Summary& CalculateModule::getResult() const
 {
     return result;

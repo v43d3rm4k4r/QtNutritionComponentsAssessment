@@ -2,10 +2,10 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QDebug>
-#include "CalculateModule.h"
 #include <chrono>
 #include <thread>
 #include <QResizeEvent>
+#include "CalculateModule.h"
 
 //======================================================================================================
 MainWindow::MainWindow(QWidget *parent)
