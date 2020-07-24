@@ -87,9 +87,11 @@ class CalculateModule
     void calcInit(int comp_num) noexcept;
 
     /*ВЫЧИСЛЕНИЯ БЕЛКОВ*/
-    double calcRecountProteins(int col, double* protein, double comp);
-    double calcAKP(double* prop, double recount[][MAX_COMP], int row);
-    double calcAminoacidskor(double akp, double fao_voz2007) noexcept;
+    double calcRecountProteins(int col, double* protein, double comp) const;
+    double calcAKP(double* prop, double recount[][MAX_COMP], int row) const;
+    double calcAminoacidskor(double akp, double fao_voz2007) const noexcept;
+    double calcFattyAcidPer100g(double fao_voz2007, double akp) const noexcept;
+    inline double calcKoefRation(double min_aminoacidskor, double aminoacidskor) const noexcept;
 
     /*ВЫЧИСЛЕНИЯ ЛИПИДОВ*/
 

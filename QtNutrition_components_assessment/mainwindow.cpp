@@ -29,7 +29,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     setTabOrder();
     spinBoxComp_valueChanged(1);
-
 }
 //======================================================================================================
 void MainWindow::spinBoxComp_valueChanged(int value)

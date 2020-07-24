@@ -5,6 +5,7 @@ CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, i
 {
     calcInit(comp_num);
 
+    /*ВЫЧИСЛЕНИЯ БЕЛКОВ*/
     try
     {
         for (int row = 0; row < AMI; ++row)
@@ -13,39 +14,30 @@ CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, i
             {
                 result.recount[row][0] = calcRecountProteins(0, result.protein, result.comp[row][0]);
             }
-            for (int col = 0; col < comp_num; ++col)
+            if (comp_num == 2)
             {
-                if (comp_num == 2)
-                {
+                for (int col = 0; col < comp_num; ++col)
                     result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                }
-                if (comp_num == 3)
-                {
-                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                }
-                if (comp_num == 4)
-                {
-                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                }
-                if (comp_num == 5)
-                {
-                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
-                }
-
-                result.akp[row] = calcAKP(result.prop, result.recount, row);
-                result.aminoacidskor[row] = calcAminoacidskor(result.akp[row], result.fao_voz2007[row]);
-
             }
+            if (comp_num == 3)
+            {
+                for (int col = 0; col < comp_num; ++col)
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+            }
+            if (comp_num == 4)
+            {
+                for (int col = 0; col < comp_num; ++col)
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+            }
+            if (comp_num == 5)
+            {
+                for (int col = 0; col < comp_num; ++col)
+                    result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
+            }
+
+            result.akp[row] = calcAKP(result.prop, result.recount, row);
+            result.aminoacidskor[row] = calcAminoacidskor(result.akp[row], result.fao_voz2007[row]);
+            result.fatty_acid_per_100g[row] = calcFattyAcidPer100g(result.fao_voz2007[row], result.akp[row]);
         }
 
     }
@@ -54,8 +46,20 @@ CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, i
         qDebug() << ex.what();
     }
 
+    // search for minimal aminoacidskor
+    double min_aminoacidskor = 999.0;
+    for (int row = 0; row < AMI; ++row)
+    {
+        if (result.aminoacidskor[row] < min_aminoacidskor)
+            min_aminoacidskor = result.aminoacidskor[row];
+    }
 
+    for (int row = 0; row < AMI; ++row)
+    {
+        result.koef_ration[row] = calcKoefRation(min_aminoacidskor, result.aminoacidskor[row]);
+    }
 
+    /*ВЫЧИСЛЕНИЯ ЛИПИДОВ*/
 
 
 }
@@ -196,7 +200,7 @@ void CalculateModule::calcInit(int comp_num) noexcept
     }
 }
 //======================================================================================================
-double CalculateModule::calcRecountProteins(int col, double* protein, double comp) // col вместо sign
+double CalculateModule::calcRecountProteins(int col, double* protein, double comp) const // col вместо sign
 {
     if (result.comp_num == 1)
         return comp * 100 / protein[0];
@@ -236,7 +240,7 @@ double CalculateModule::calcRecountProteins(int col, double* protein, double com
     throw CalcException(1);
 }
 //======================================================================================================
-double CalculateModule::calcAKP(double* prop, double recount[][MAX_COMP], int row)
+double CalculateModule::calcAKP(double* prop, double recount[][MAX_COMP], int row) const
 {
     if (result.comp_num == 1)
         return recount[row][0];
@@ -254,11 +258,25 @@ double CalculateModule::calcAKP(double* prop, double recount[][MAX_COMP], int ro
     throw CalcException(2);
 }
 //======================================================================================================
-double CalculateModule::calcAminoacidskor(double akp, double fao_voz2007) noexcept
+inline double CalculateModule::calcAminoacidskor(double akp, double fao_voz2007) const noexcept
 {
     return akp / fao_voz2007 * 100;
 }
+//======================================================================================================
+inline double CalculateModule::calcFattyAcidPer100g(double fao_voz2007, double akp) const noexcept
+{
+    if (fao_voz2007 <= akp)
+        return fao_voz2007 / akp;
+    else
+        return akp / fao_voz2007;
+}
+//======================================================================================================
 
+//======================================================================================================
+inline double CalculateModule::calcKoefRation(double min_aminoacidskor, double aminoacidskor) const noexcept
+{
+    return min_aminoacidskor / aminoacidskor;
+}
 //======================================================================================================
 const Summary& CalculateModule::getResult() const
 {
