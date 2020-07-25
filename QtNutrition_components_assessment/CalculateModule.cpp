@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include <cmath>
 
-CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, int comp_num)
+CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, int comp_num) noexcept
     : input{input}
 {
     calcInit(comp_num);
@@ -36,8 +36,8 @@ CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, i
                     result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
             }
 
-            result.akp[row] = calcAKP(row, result.prop, result.recount);
-            result.aminoacidskor[row] = calcAminoacidskor(result.akp[row], result.fao_voz2007[row]);
+            result.akp[row]                 = calcAKP(row, result.prop, result.recount);
+            result.aminoacidskor[row]       = calcAminoacidskor(result.akp[row], result.fao_voz2007[row]);
             result.fatty_acid_per_100g[row] = calcFattyAcidPer100g(result.fao_voz2007[row], result.akp[row]);
         }
 
@@ -87,33 +87,23 @@ CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, i
                 for (int col = 0; col < result.comp_num; ++col)
                     result.recount_lip[row][col] = calcRecoutLip(col, result.lipids, result.ultimate[row][col]);
             }
-            result.ratio_calc[row] = calcRatioCalc(row, result.prop, result.recount_lip);
+            result.ratio_calc[row]        = calcRatioCalc(row, result.prop, result.recount_lip);
             result.lip_balance_ratio[row] = calcLipBalanceRatio(result.ratio_calc[row], result.fao_voz2008[row]);
             calcFattyAcidCompliance(result.lip_balance_ratio, &result.fattyAcidComplianceResult2,
                                                               &result.fattyAcidComplianceResult2);
         }
-
-
-
-
-
     }
     catch (std::exception& ex)
     {
         qDebug() << ex.what();
     }
 
-    /*
-        balance_index = Balance_Index(fatty_acid_per_100g);
-        k_general = Balance_Index_General(balance_index, biological_value, amino_acid_comp_ratio_coef);*/
-
-    result.kras = calcKRAS(calcAminoacidskorSum(result.aminoacidskor), min_aminoacidskor);
-    result.biological_value = calcBiologicalValue(result.kras);
-    result.amino_acid_comp_ratio_coef = calcAminoAcidCompRatioCoef(result.koef_ration, result.akp);
+    result.kras                        = calcKRAS(calcAminoacidskorSum(result.aminoacidskor), min_aminoacidskor);
+    result.biological_value            = calcBiologicalValue(result.kras);
+    result.amino_acid_comp_ratio_coef  = calcAminoAcidCompRatioCoef(result.koef_ration, result.akp);
     result.comparable_redundancy_ratio = calcComparableRedundancyRatio(result.akp, min_aminoacidskor, result.fao_voz2007);
-
-
-
+    result.balance_index               = calcBalanceIndex(result.fatty_acid_per_100g);
+    result.k_general                   = calcBalanceIndexGeneral(result.balance_index, result.biological_value, result.amino_acid_comp_ratio_coef);
 }
 //================================================================================================================================
 void CalculateModule::calcInit(int comp_num) noexcept
@@ -315,7 +305,7 @@ double CalculateModule::calcAminoacidskor(double akp, const double fao_voz2007) 
     return akp / fao_voz2007 * 100;
 }
 //================================================================================================================================
-double CalculateModule::calcFattyAcidPer100g(double fao_voz2007, double akp) const noexcept
+double CalculateModule::calcFattyAcidPer100g(double akp, const double fao_voz2007) const noexcept
 {
     if (fao_voz2007 <= akp)
         return fao_voz2007 / akp;
@@ -453,6 +443,23 @@ double CalculateModule::calcComparableRedundancyRatio(double akp[], double min_a
     }
     return numerator / (min_aminoacidskor / 100);
 }
+//================================================================================================================================
+double CalculateModule::calcBalanceIndex(double fatty_acid_per_100g[]) const noexcept
+{
+    double temp = 1.0;
+    for(int i = 0; i < AMI; ++i)
+    {
+        temp *= fatty_acid_per_100g[i];
+    }
+    return pow(temp, 1.0/9.0);
+}
+//================================================================================================================================
+double CalculateModule::calcBalanceIndexGeneral(double balance_index, double biological_value, double amino_acid_comp_ratio_coef) const noexcept
+{
+    double temp = (balance_index / 1) * (biological_value / 100) * (amino_acid_comp_ratio_coef / 1);
+    return pow(temp, 1.0/3.0);
+}
+
 //================================================================================================================================
 const Summary& CalculateModule::getResult() const
 {

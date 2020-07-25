@@ -2,8 +2,6 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QDebug>
-#include <chrono>
-#include <thread>
 #include <QResizeEvent>
 #include "CalculateModule.h"
 
@@ -25,7 +23,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButtonCalculate, SIGNAL(clicked()),
             this, SLOT(pushButtonCalculate_clicked())
             );
-
 
     setTabOrder();
     spinBoxComp_valueChanged(1);
@@ -336,8 +333,6 @@ void MainWindow::pushButtonCalculate_clicked()
                  + ui->doubleSpinBoxPropComp3->value() + ui->doubleSpinBoxPropComp4->value()
                  + ui->doubleSpinBoxPropComp5->value();
 
-    qDebug() << sum;
-
     if (!qFuzzyCompare(sum, 1.0))
     {
         QMessageBox::warning(this, "Ошибка",
@@ -345,7 +340,22 @@ void MainWindow::pushButtonCalculate_clicked()
         return;
     }
 
-    cModule = new CalculateModule(getAllSpinBoxes(), ui->spinBoxComp->value());
+    CalculateModule* cModule = new CalculateModule(getAllSpinBoxes(), ui->spinBoxComp->value());
+
+    summary = cModule->getResult();
+
+    delete cModule;
+
+
+
+
+
+
+
+
+
+
+
 
 }
 //======================================================================================================
@@ -353,7 +363,7 @@ QVector<QList<QDoubleSpinBox*>> MainWindow::getAllSpinBoxes() const
 {
     QVector<QList<QDoubleSpinBox*>> allSpinBoxes;
 
-    for (uint8_t i = 1; i <= 5; i++)
+    for (uint8_t i = 1; i <= 5; ++i)
     {
         allSpinBoxes << getColumnOfCompSpinboxes(i);
     }
@@ -363,5 +373,4 @@ QVector<QList<QDoubleSpinBox*>> MainWindow::getAllSpinBoxes() const
 MainWindow::~MainWindow()
 {
     delete ui;
-    delete cModule;
 }

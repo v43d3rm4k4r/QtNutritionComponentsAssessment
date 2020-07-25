@@ -88,8 +88,8 @@ class CalculateModule
     /*ВЫЧИСЛЕНИЯ БЕЛКОВ*/
     inline double calcRecountProteins(int col, double* protein, double comp) const;
     inline double calcAKP(int row, double* prop, double recount[][MAX_COMP]) const;
-    inline double calcAminoacidskor(double akp, double fao_voz2007) const noexcept;
-    inline double calcFattyAcidPer100g(double fao_voz2007, double akp) const noexcept;
+    inline double calcAminoacidskor(double akp, const double fao_voz2007) const noexcept;
+    inline double calcFattyAcidPer100g(double akp, const double fao_voz2007) const noexcept;
     inline double calcKoefRation(double min_aminoacidskor, double aminoacidskor) const noexcept;
 
     inline double calcAminoacidskorSum(double aminoacidskor[]) const noexcept;
@@ -97,17 +97,20 @@ class CalculateModule
     inline double calcBiologicalValue(double kras) const noexcept;
     inline double calcAminoAcidCompRatioCoef(double koef_ration[], double akp[]) const noexcept;
     inline double calcComparableRedundancyRatio(double akp[], double min_aminoacidskor, const double fao_voz2007[]) const noexcept;
+    inline double calcBalanceIndex(double fatty_acid_per_100g[]) const noexcept;
+    inline double calcBalanceIndexGeneral(double balance_index, double biological_value,double amino_acid_comp_ratio_coef) const noexcept;
+
 
     /*ВЫЧИСЛЕНИЯ ЛИПИДОВ*/
     inline double calcRecoutLip(int row, double result[], double ultimate) const;
     inline double calcRatioCalc(int row, double prop[], double recount_lip[][MAX_COMP]) const;
     inline double calcLipBalanceRatio(double ratio_calc, const double fao_voz2008) const noexcept;
-    inline void calcFattyAcidCompliance(double lip_balance_ratio[], double* fattyAcidComplianceResult1,
+    inline void   calcFattyAcidCompliance(double lip_balance_ratio[], double* fattyAcidComplianceResult1,
                                                                       double* fattyAcidComplianceResult2) const noexcept;
 
 public:
     // вызываем в конструкторе все методы вычислений
-    explicit CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, int comp_num);
+    explicit CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, int comp_num) noexcept;
 
     const Summary& getResult() const;
 
