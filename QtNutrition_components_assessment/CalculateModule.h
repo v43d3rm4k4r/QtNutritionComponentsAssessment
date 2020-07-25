@@ -14,8 +14,8 @@ struct Summary
 {
     int comp_num = 0; // кол-во компонентов
 
-    const double fao_voz2007[AMI] = {3.9, 1.5, 3.0, 5.9, 4.5, 2.2, 2.3, 0.6, 3.8};
-    const double fao_voz2008[LIP_PROP] = {33.33, 33.33, 33.33, 6.67, 26.67};
+    double fao_voz2007[AMI] = {3.9, 1.5, 3.0, 5.9, 4.5, 2.2, 2.3, 0.6, 3.8};
+    double fao_voz2008[LIP_PROP] = {33.33, 33.33, 33.33, 6.67, 26.67};
 
     /*БЕЛКИ*/
     double protein[MAX_COMP] = {0.0}; // кол-во белка на 100г каждого компонента
