@@ -19,7 +19,7 @@ struct Summary
 
     /*БЕЛКИ*/
     double protein[MAX_COMP] = {0.0}; // кол-во белка на 100г каждого компонента
-    double comp[MAX_COMP][AMI] = {{0.0}}; // для аминокислот
+    double comp[AMI][MAX_COMP] = {{0.0}}; // для аминокислот
 
     /*ЛИПИДЫ*/
     double lipids[MAX_COMP] = {0.0};
@@ -31,7 +31,7 @@ struct Summary
     double koef_ration[AMI] = {0.0};
     double fatty_acid_per_100g[AMI] = {0.0};
     double prop[MAX_COMP] = {0.0}; // для пропорций, если компонентов > 1
-    double recount[AMI][MAX_COMP] = {{0.0}}; // для пересчёта аминокилот
+    double recount[AMI][LIP_PROP] = {{0.0}}; // для пересчёта аминокилот
     /*коэффициент разбалансированности, биологическая ценность,
         коэффициент рациональности аминокислотного состава,
         индекс сбалансированности, показатель сопоставимой избыточности и
@@ -79,7 +79,7 @@ public:
 //======================================================================================================
 class CalculateModule
 {
-    QVector<QList<QDoubleSpinBox*>> input;
+    QVector<QVector<QDoubleSpinBox*>> input;
     Summary result;
 
     // CALCULATIONS
@@ -110,7 +110,7 @@ class CalculateModule
 
 public:
     // вызываем в конструкторе все методы вычислений
-    explicit CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, int comp_num) noexcept;
+    explicit CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input, int comp_num) noexcept;
 
     const Summary& getResult() const;
 

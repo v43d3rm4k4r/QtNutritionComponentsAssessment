@@ -21,16 +21,16 @@ class MainWindow : public QMainWindow
 
     Ui::MainWindow* ui;
 
-    QList<QLabel*> listCompLabels;
-    QList<QDoubleSpinBox*> getColumnOfCompSpinboxes(int column) const;
-
+    QVector<QLabel*> listCompLabels;
+    QVector<QDoubleSpinBox*> getColumnOfCompSpinboxes(int column) const;
+    QVector<QDoubleSpinBox*> getRowOfSpinboxes(int row) const;
 
     void initMainWindow();
     void changeLabelsFor1Comp();
     void changeLabelsForMultComp();
     void setTabOrder();
-    QVector<QList<QDoubleSpinBox*>> getAllSpinBoxes() const;
-
+    QVector<QVector<QDoubleSpinBox*>> getAllSpinBoxes() const;
+    void showResults();
 
 private slots:
     void spinBoxComp_valueChanged(int value);

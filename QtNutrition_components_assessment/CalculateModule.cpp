@@ -1,12 +1,12 @@
 #include "mainwindow.h"
 #include <cmath>
 
-CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, int comp_num) noexcept
+CalculateModule::CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input, int comp_num) noexcept
     : input{input}
 {
-    calcInit(comp_num);
+    calcInit(comp_num);/*
 
-    /*ВЫЧИСЛЕНИЯ БЕЛКОВ*/
+    /// ВЫЧИСЛЕНИЯ БЕЛКОВ
     try
     {
         for (int row = 0; row < AMI; ++row)
@@ -60,7 +60,7 @@ CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, i
         result.koef_ration[row] = calcKoefRation(min_aminoacidskor, result.aminoacidskor[row]);
     }
 
-    /*ВЫЧИСЛЕНИЯ ЛИПИДОВ*/
+    /// ВЫЧИСЛЕНИЯ ЛИПИДОВ
     try
     {
         for (int row = 0; row < LIP_PROP; ++row)
@@ -103,7 +103,7 @@ CalculateModule::CalculateModule(const QVector<QList<QDoubleSpinBox*>>& input, i
     result.amino_acid_comp_ratio_coef  = calcAminoAcidCompRatioCoef(result.koef_ration, result.akp);
     result.comparable_redundancy_ratio = calcComparableRedundancyRatio(result.akp, min_aminoacidskor, result.fao_voz2007);
     result.balance_index               = calcBalanceIndex(result.fatty_acid_per_100g);
-    result.k_general                   = calcBalanceIndexGeneral(result.balance_index, result.biological_value, result.amino_acid_comp_ratio_coef);
+    result.k_general                   = calcBalanceIndexGeneral(result.balance_index, result.biological_value, result.amino_acid_comp_ratio_coef);*/
 }
 //================================================================================================================================
 void CalculateModule::calcInit(int comp_num) noexcept
@@ -159,35 +159,36 @@ void CalculateModule::calcInit(int comp_num) noexcept
         for (int i = 0; i < comp_num; ++i)
             result.protein[i] = input[1][i]->value();
     }
-    //------------------------------------------------------------------------------------------
-    for (int row = 2; row < AMI; ++row)
+    //------------------------------------------------------------------------------------------ // RUNTIME ERROR ([row+2])
+
+    for (int row = 2; row < AMI+2; ++row)
     {
         if (comp_num == 1)
         {
-            result.comp[row][0] = input[row][0]->value();
+            result.comp[row-2][0] = input[row][0]->value();
         }
         if (comp_num == 2)
         {
             for (int col = 0; col < comp_num; ++col)
-                result.comp[row][col] = input[row][col]->value();
+                result.comp[row-2][col] = input[row][col]->value();
         }
         if (comp_num == 3)
         {
             for (int col = 0; col < comp_num; ++col)
-                result.comp[row][col] = input[row][col]->value();
+                result.comp[row-2][col] = input[row][col]->value();
         }
         if (comp_num == 4)
         {
             for (int col = 0; col < comp_num; ++col)
-                result.comp[row][col] = input[row][col]->value();
+                result.comp[row-2][col] = input[row][col]->value();
         }
         if (comp_num == 5)
         {
             for (int col = 0; col < comp_num; ++col)
-                result.comp[row][col] = input[row][col]->value();
+                result.comp[row-2][col] = input[row][col]->value();
         }
     }
-    //------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------ // RUNTIME ERROR
     if (comp_num == 1)
     {
         result.lipids[0] = input[11][0]->value();
@@ -213,31 +214,31 @@ void CalculateModule::calcInit(int comp_num) noexcept
             result.lipids[i] = input[11][i]->value();
     }
     //------------------------------------------------------------------------------------------
-    for (int row = 12; row < LIP_PROP; ++row)
+    for (int row = 12; row < LIP_PROP+12; ++row)
     {
         if (comp_num == 1)
         {
-            result.ultimate[row][0] = input[row][0]->value();
+            result.ultimate[row-12][0] = input[row][0]->value();
         }
         if (comp_num == 2)
         {
             for (int col = 0; col < comp_num; ++col)
-                result.ultimate[row][col] = input[row][col]->value();
+                result.ultimate[row-12][col] = input[row][col]->value();
         }
         if (comp_num == 3)
         {
             for (int col = 0; col < comp_num; ++col)
-                result.ultimate[row][col] = input[row][col]->value();
+                result.ultimate[row-12][col] = input[row][col]->value();
         }
         if (comp_num == 4)
         {
             for (int col = 0; col < comp_num; ++col)
-                result.ultimate[row][col] = input[row][col]->value();
+                result.ultimate[row-12][col] = input[row][col]->value();
         }
         if (comp_num == 5)
         {
             for (int col = 0; col < comp_num; ++col)
-                result.ultimate[row][col] = input[row][col]->value();
+                result.ultimate[row-12][col] = input[row][col]->value();
         }
     }
 }

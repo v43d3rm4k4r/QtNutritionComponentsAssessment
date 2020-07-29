@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <QDebug>
 #include <QResizeEvent>
+#include <QPainter>
 #include "CalculateModule.h"
 
 //======================================================================================================
@@ -168,13 +169,13 @@ void MainWindow::spinBoxComp_valueChanged(int value)
     earlyer_value = value;
 }
 //======================================================================================================
-QList<QDoubleSpinBox*> MainWindow::getColumnOfCompSpinboxes(int column) const
+QVector<QDoubleSpinBox*> MainWindow::getColumnOfCompSpinboxes(int column) const
 {
     switch (column)
     {
     // only for MainWindow::setTabOrder()
     case 1:
-        return QList<QDoubleSpinBox*>()  << ui->doubleSpinBoxPropComp1
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxPropComp1
                                          << ui->doubleSpinBoxProteinsComp1
                                          << ui->doubleSpinBoxValin1
                                          << ui->doubleSpinBoxGistidin1
@@ -194,7 +195,7 @@ QList<QDoubleSpinBox*> MainWindow::getColumnOfCompSpinboxes(int column) const
         break;
 
     case 2:
-        return QList<QDoubleSpinBox*>()  << ui->doubleSpinBoxPropComp2
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxPropComp2
                                          << ui->doubleSpinBoxProteinsComp2
                                          << ui->doubleSpinBoxValin2
                                          << ui->doubleSpinBoxGistidin2
@@ -214,7 +215,7 @@ QList<QDoubleSpinBox*> MainWindow::getColumnOfCompSpinboxes(int column) const
         break;
 
     case 3:
-        return QList<QDoubleSpinBox*>()  << ui->doubleSpinBoxPropComp3
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxPropComp3
                                          << ui->doubleSpinBoxProteinsComp3
                                          << ui->doubleSpinBoxValin3
                                          << ui->doubleSpinBoxGistidin3
@@ -234,7 +235,7 @@ QList<QDoubleSpinBox*> MainWindow::getColumnOfCompSpinboxes(int column) const
         break;
 
     case 4:
-        return QList<QDoubleSpinBox*>()  << ui->doubleSpinBoxPropComp4
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxPropComp4
                                          << ui->doubleSpinBoxProteinsComp4
                                          << ui->doubleSpinBoxValin4
                                          << ui->doubleSpinBoxGistidin4
@@ -254,7 +255,7 @@ QList<QDoubleSpinBox*> MainWindow::getColumnOfCompSpinboxes(int column) const
         break;
 
     case 5:
-        return QList<QDoubleSpinBox*>()  << ui->doubleSpinBoxPropComp5
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxPropComp5
                                          << ui->doubleSpinBoxProteinsComp5
                                          << ui->doubleSpinBoxValin5
                                          << ui->doubleSpinBoxGistidin5
@@ -273,8 +274,132 @@ QList<QDoubleSpinBox*> MainWindow::getColumnOfCompSpinboxes(int column) const
                                          << ui->doubleSpinBoxOmega3_5;
         break;
     }
-    return QList<QDoubleSpinBox*>();
+    return QVector<QDoubleSpinBox*>();
 }
+//======================================================================================================
+QVector<QDoubleSpinBox*> MainWindow::getRowOfSpinboxes(int row) const
+{
+    switch (row)
+    {
+    case 1:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxPropComp1
+                                           << ui->doubleSpinBoxPropComp2
+                                           << ui->doubleSpinBoxPropComp3
+                                           << ui->doubleSpinBoxPropComp4
+                                           << ui->doubleSpinBoxPropComp5;
+        break;
+    case 2:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxProteinsComp1
+                                           << ui->doubleSpinBoxProteinsComp2
+                                           << ui->doubleSpinBoxProteinsComp3
+                                           << ui->doubleSpinBoxProteinsComp4
+                                           << ui->doubleSpinBoxProteinsComp5;
+        break;
+    case 3:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxValin1
+                                           << ui->doubleSpinBoxValin2
+                                           << ui->doubleSpinBoxValin3
+                                           << ui->doubleSpinBoxValin4
+                                           << ui->doubleSpinBoxValin5;
+        break;
+    case 4:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxGistidin1
+                                           << ui->doubleSpinBoxGistidin2
+                                           << ui->doubleSpinBoxGistidin3
+                                           << ui->doubleSpinBoxGistidin4
+                                           << ui->doubleSpinBoxGistidin5;
+        break;
+    case 5:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxIzoleycin1
+                                           << ui->doubleSpinBoxIzoleycin2
+                                           << ui->doubleSpinBoxIzoleycin3
+                                           << ui->doubleSpinBoxIzoleycin4
+                                           << ui->doubleSpinBoxIzoleycin5;
+        break;
+    case 6:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxLeycin1
+                                           << ui->doubleSpinBoxLeycin2
+                                           << ui->doubleSpinBoxLeycin3
+                                           << ui->doubleSpinBoxLeycin4
+                                           << ui->doubleSpinBoxLeycin5;
+        break;
+    case 7:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxLizin1
+                                           << ui->doubleSpinBoxLizin2
+                                           << ui->doubleSpinBoxLizin3
+                                           << ui->doubleSpinBoxLizin4
+                                           << ui->doubleSpinBoxLizin5;
+        break;
+    case 8:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxMetioninCistein1
+                                           << ui->doubleSpinBoxMetioninCistein2
+                                           << ui->doubleSpinBoxMetioninCistein3
+                                           << ui->doubleSpinBoxMetioninCistein4
+                                           << ui->doubleSpinBoxMetioninCistein5;
+        break;
+    case 9:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxTreonin1
+                                           << ui->doubleSpinBoxTreonin2
+                                           << ui->doubleSpinBoxTreonin3
+                                           << ui->doubleSpinBoxTreonin4
+                                           << ui->doubleSpinBoxTreonin5;
+        break;
+    case 10:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxTriptofan1
+                                           << ui->doubleSpinBoxTriptofan2
+                                           << ui->doubleSpinBoxTriptofan3
+                                           << ui->doubleSpinBoxTriptofan4
+                                           << ui->doubleSpinBoxTriptofan5;
+        break;
+    case 11:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxFenilalaninTirozin1
+                                           << ui->doubleSpinBoxFenilalaninTirozin2
+                                           << ui->doubleSpinBoxFenilalaninTirozin3
+                                           << ui->doubleSpinBoxFenilalaninTirozin4
+                                           << ui->doubleSpinBoxFenilalaninTirozin5;
+    case 12:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxLypidsComp1
+                                           << ui->doubleSpinBoxLypidsComp2
+                                           << ui->doubleSpinBoxLypidsComp3
+                                           << ui->doubleSpinBoxLypidsComp4
+                                           << ui->doubleSpinBoxLypidsComp5;
+    case 13:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxSaturatedFattyAcids1
+                                           << ui->doubleSpinBoxSaturatedFattyAcids2
+                                           << ui->doubleSpinBoxSaturatedFattyAcids3
+                                           << ui->doubleSpinBoxSaturatedFattyAcids4
+                                           << ui->doubleSpinBoxSaturatedFattyAcids5;
+    case 14:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxMonounsaturatedFattyAcids1
+                                           << ui->doubleSpinBoxMonounsaturatedFattyAcids2
+                                           << ui->doubleSpinBoxMonounsaturatedFattyAcids3
+                                           << ui->doubleSpinBoxMonounsaturatedFattyAcids4
+                                           << ui->doubleSpinBoxMonounsaturatedFattyAcids5;
+    case 15:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxPolyunsaturatedFattyAcids1
+                                           << ui->doubleSpinBoxPolyunsaturatedFattyAcids2
+                                           << ui->doubleSpinBoxPolyunsaturatedFattyAcids3
+                                           << ui->doubleSpinBoxPolyunsaturatedFattyAcids4
+                                           << ui->doubleSpinBoxPolyunsaturatedFattyAcids5;
+    case 16:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxOmega6_1
+                                           << ui->doubleSpinBoxOmega6_2
+                                           << ui->doubleSpinBoxOmega6_3
+                                           << ui->doubleSpinBoxOmega6_4
+                                           << ui->doubleSpinBoxOmega6_5;
+    case 17:
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxOmega6_1
+                                           << ui->doubleSpinBoxOmega6_2
+                                           << ui->doubleSpinBoxOmega6_3
+                                           << ui->doubleSpinBoxOmega6_4
+                                           << ui->doubleSpinBoxOmega6_1;
+        break;
+
+    }
+
+    return QVector<QDoubleSpinBox*>();
+}
+
 //======================================================================================================
 void MainWindow::changeLabelsFor1Comp()
 {
@@ -304,7 +429,7 @@ void MainWindow::setTabOrder()
 {
     const uint8_t ROWS = 17;
 
-    QVector<QList<QDoubleSpinBox*>> vCols;
+    QVector<QVector<QDoubleSpinBox*>> vCols;
 
     for (uint8_t i = 1; i <= 5; i++)
     {
@@ -342,12 +467,11 @@ void MainWindow::pushButtonCalculate_clicked()
 
     CalculateModule* cModule = new CalculateModule(getAllSpinBoxes(), ui->spinBoxComp->value());
 
-    summary = cModule->getResult();
-
-    delete cModule;
-
+    /*summary = cModule->getResult();
+    delete cModule;*/
 
 
+    //showResults();
 
 
 
@@ -359,15 +483,27 @@ void MainWindow::pushButtonCalculate_clicked()
 
 }
 //======================================================================================================
-QVector<QList<QDoubleSpinBox*>> MainWindow::getAllSpinBoxes() const
+QVector<QVector<QDoubleSpinBox*>> MainWindow::getAllSpinBoxes() const
 {
-    QVector<QList<QDoubleSpinBox*>> allSpinBoxes;
+    QVector<QVector<QDoubleSpinBox*>> allSpinBoxes;
 
-    for (uint8_t i = 1; i <= 5; ++i)
+    for (int i = 1; i <= 17; ++i)
     {
-        allSpinBoxes << getColumnOfCompSpinboxes(i);
+        allSpinBoxes << getRowOfSpinboxes(i);
     }
     return allSpinBoxes;
+}
+//======================================================================================================
+void MainWindow::showResults()
+{
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+
+    painter.setBrush(QBrush(Qt::black, Qt::BDiagPattern));
+    painter.setPen(QPen(Qt::blue));
+
+    painter.drawPie(QRect(10, 10, 110, 70), 90 * 16, 270 * 16);
+
 }
 //======================================================================================================
 MainWindow::~MainWindow()
