@@ -4,7 +4,7 @@
 CalculateModule::CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input, int comp_num) noexcept
     : input{input}
 {
-    calcInit(comp_num);/*
+    calcInit(comp_num);
 
     /// ВЫЧИСЛЕНИЯ БЕЛКОВ
     try
@@ -103,7 +103,7 @@ CalculateModule::CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input,
     result.amino_acid_comp_ratio_coef  = calcAminoAcidCompRatioCoef(result.koef_ration, result.akp);
     result.comparable_redundancy_ratio = calcComparableRedundancyRatio(result.akp, min_aminoacidskor, result.fao_voz2007);
     result.balance_index               = calcBalanceIndex(result.fatty_acid_per_100g);
-    result.k_general                   = calcBalanceIndexGeneral(result.balance_index, result.biological_value, result.amino_acid_comp_ratio_coef);*/
+    result.k_general                   = calcBalanceIndexGeneral(result.balance_index, result.biological_value, result.amino_acid_comp_ratio_coef);
 }
 //================================================================================================================================
 void CalculateModule::calcInit(int comp_num) noexcept
@@ -159,7 +159,7 @@ void CalculateModule::calcInit(int comp_num) noexcept
         for (int i = 0; i < comp_num; ++i)
             result.protein[i] = input[1][i]->value();
     }
-    //------------------------------------------------------------------------------------------ // RUNTIME ERROR ([row+2])
+    //------------------------------------------------------------------------------------------
 
     for (int row = 2; row < AMI+2; ++row)
     {
@@ -188,7 +188,7 @@ void CalculateModule::calcInit(int comp_num) noexcept
                 result.comp[row-2][col] = input[row][col]->value();
         }
     }
-    //------------------------------------------------------------------------------------------ // RUNTIME ERROR
+    //------------------------------------------------------------------------------------------
     if (comp_num == 1)
     {
         result.lipids[0] = input[11][0]->value();

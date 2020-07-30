@@ -3,7 +3,6 @@
 #include <QMessageBox>
 #include <QDebug>
 #include <QResizeEvent>
-#include <QPainter>
 #include "CalculateModule.h"
 
 //======================================================================================================
@@ -471,7 +470,7 @@ void MainWindow::pushButtonCalculate_clicked()
     delete cModule;*/
 
 
-    //showResults();
+    showResults();
 
 
 
@@ -496,13 +495,11 @@ QVector<QVector<QDoubleSpinBox*>> MainWindow::getAllSpinBoxes() const
 //======================================================================================================
 void MainWindow::showResults()
 {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing, true);
+    QWidget* wgt = new ResultWindow(this);
+    wgt->resize(500, 500);
+    wgt->show();
 
-    painter.setBrush(QBrush(Qt::black, Qt::BDiagPattern));
-    painter.setPen(QPen(Qt::blue));
 
-    painter.drawPie(QRect(10, 10, 110, 70), 90 * 16, 270 * 16);
 
 }
 //======================================================================================================

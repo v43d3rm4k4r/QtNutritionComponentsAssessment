@@ -2,6 +2,7 @@
 
 #include <QMainWindow>
 #include <QLabel>
+#include <QPainter>
 #include "CalculateModule.h"
 
 QT_BEGIN_NAMESPACE
@@ -39,4 +40,24 @@ private slots:
 public:
     MainWindow(QWidget *parent = nullptr);
     virtual ~MainWindow();
+};
+//======================================================================================================
+class ResultWindow : public QFrame
+{
+public:
+    ResultWindow(QWidget *parent = nullptr)
+        : QFrame(parent)
+    {
+
+    }
+
+protected:
+    void paintEvent(QPaintEvent* event) override
+    {
+        QPainter painter(this);
+        painter.setRenderHint(QPainter::Antialiasing, true);
+        painter.setBrush(QBrush(Qt::black, Qt::BDiagPattern));
+        painter.setPen(QPen(Qt::blue, 1));
+        painter.drawPie(QRect(10, 10,  110, 70), 90 * 16, 270 * 16);
+    }
 };
