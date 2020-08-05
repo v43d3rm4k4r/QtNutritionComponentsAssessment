@@ -12,7 +12,7 @@
 //======================================================================================================
 struct Summary
 {
-    int comp_num = 0; // кол-во компонентов
+    uint32_t comp_num = 0; // кол-во компонентов
 
     double fao_voz2007[AMI] = {3.9, 1.5, 3.0, 5.9, 4.5, 2.2, 2.3, 0.6, 3.8};
     double fao_voz2008[LIP_PROP] = {33.33, 33.33, 33.33, 6.67, 26.67};
@@ -56,7 +56,7 @@ class CalcException : public std::exception
     char* _what;
 
 public:
-    CalcException(int func_num) : _what{nullptr}
+    CalcException(uint32_t func_num) : _what{nullptr}
     {
         if (func_num == 1)
             strcpy(_what, "Error in calcRecountProteins()");
@@ -83,34 +83,34 @@ class CalculateModule
     Summary result;
 
     // CALCULATIONS
-    void calcInit(int comp_num) noexcept;
+    void calcInit(uint32_t comp_num) noexcept;
 
     /*ВЫЧИСЛЕНИЯ БЕЛКОВ*/
-    inline double calcRecountProteins(int col, double* protein, double comp) const;
-    inline double calcAKP(int row, double* prop, double recount[][MAX_COMP]) const;
-    inline double calcAminoacidskor(double akp, const double fao_voz2007) const noexcept;
-    inline double calcFattyAcidPer100g(double akp, const double fao_voz2007) const noexcept;
-    inline double calcKoefRation(double min_aminoacidskor, double aminoacidskor) const noexcept;
+    double calcRecountProteins(uint32_t col, double* protein, double comp) const;
+    double calcAKP(uint32_t row, double* prop, double recount[][MAX_COMP]) const;
+    double calcAminoacidskor(double akp, const double fao_voz2007) const noexcept;
+    double calcFattyAcidPer100g(double akp, const double fao_voz2007) const noexcept;
+    double calcKoefRation(double min_aminoacidskor, double aminoacidskor) const noexcept;
 
-    inline double calcAminoacidskorSum(double aminoacidskor[]) const noexcept;
-    inline double calcKRAS(double aminoacidskor_sum, double min_aminoacidskor) const noexcept;
-    inline double calcBiologicalValue(double kras) const noexcept;
-    inline double calcAminoAcidCompRatioCoef(double koef_ration[], double akp[]) const noexcept;
-    inline double calcComparableRedundancyRatio(double akp[], double min_aminoacidskor, const double fao_voz2007[]) const noexcept;
-    inline double calcBalanceIndex(double fatty_acid_per_100g[]) const noexcept;
-    inline double calcBalanceIndexGeneral(double balance_index, double biological_value,double amino_acid_comp_ratio_coef) const noexcept;
+    double calcAminoacidskorSum(double aminoacidskor[]) const noexcept;
+    double calcKRAS(double aminoacidskor_sum, double min_aminoacidskor) const noexcept;
+    double calcBiologicalValue(double kras) const noexcept;
+    double calcAminoAcidCompRatioCoef(double koef_ration[], double akp[]) const noexcept;
+    double calcComparableRedundancyRatio(double akp[], double min_aminoacidskor, const double fao_voz2007[]) const noexcept;
+    double calcBalanceIndex(double fatty_acid_per_100g[]) const noexcept;
+    double calcBalanceIndexGeneral(double balance_index, double biological_value,double amino_acid_comp_ratio_coef) const noexcept;
 
 
     /*ВЫЧИСЛЕНИЯ ЛИПИДОВ*/
-    inline double calcRecoutLip(int row, double result[], double ultimate) const;
-    inline double calcRatioCalc(int row, double prop[], double recount_lip[][MAX_COMP]) const;
-    inline double calcLipBalanceRatio(double ratio_calc, const double fao_voz2008) const noexcept;
-    inline void   calcFattyAcidCompliance(double lip_balance_ratio[], double* fattyAcidComplianceResult1,
+    double calcRecoutLip(uint32_t row, double result[], double ultimate) const;
+    double calcRatioCalc(uint32_t row, double prop[], double recount_lip[][MAX_COMP]) const;
+    double calcLipBalanceRatio(double ratio_calc, const double fao_voz2008) const noexcept;
+    void   calcFattyAcidCompliance(double lip_balance_ratio[], double* fattyAcidComplianceResult1,
                                                                       double* fattyAcidComplianceResult2) const noexcept;
 
 public:
     // вызываем в конструкторе все методы вычислений
-    explicit CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input, int comp_num) noexcept;
+    explicit CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input, uint32_t comp_num) noexcept;
 
     const Summary& getResult() const;
 

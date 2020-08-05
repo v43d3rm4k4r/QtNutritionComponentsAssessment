@@ -23,8 +23,8 @@ class MainWindow : public QMainWindow
     Ui::MainWindow* ui;
 
     QVector<QLabel*> listCompLabels;
-    QVector<QDoubleSpinBox*> getColumnOfCompSpinboxes(int column) const;
-    QVector<QDoubleSpinBox*> getRowOfSpinboxes(int row) const;
+    QVector<QDoubleSpinBox*> getColumnOfCompSpinboxes(uint32_t column) const;
+    QVector<QDoubleSpinBox*> getRowOfSpinboxes(uint32_t row) const;
 
     void initMainWindow();
     void changeLabelsFor1Comp();
@@ -34,11 +34,11 @@ class MainWindow : public QMainWindow
     void showResults();
 
 private slots:
-    void spinBoxComp_valueChanged(int value);
+    void spinBoxComp_valueChanged(uint32_t value);
     void pushButtonCalculate_clicked();
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget* parent = nullptr);
     virtual ~MainWindow();
 };
 //======================================================================================================

@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include <cmath>
 
-CalculateModule::CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input, int comp_num) noexcept
+CalculateModule::CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input, uint32_t comp_num) noexcept
     : input{input}
 {
     calcInit(comp_num);
@@ -17,22 +17,22 @@ CalculateModule::CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input,
             }
             if (comp_num == 2)
             {
-                for (int col = 0; col < comp_num; ++col)
+                for (uint32_t col = 0; col < comp_num; ++col)
                     result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
             }
             if (comp_num == 3)
             {
-                for (int col = 0; col < comp_num; ++col)
+                for (uint32_t col = 0; col < comp_num; ++col)
                     result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
             }
             if (comp_num == 4)
             {
-                for (int col = 0; col < comp_num; ++col)
+                for (uint32_t col = 0; col < comp_num; ++col)
                     result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
             }
             if (comp_num == 5)
             {
-                for (int col = 0; col < comp_num; ++col)
+                for (uint32_t col = 0; col < comp_num; ++col)
                     result.recount[row][col] = calcRecountProteins(col, result.protein, result.comp[row][col]);
             }
 
@@ -69,22 +69,22 @@ CalculateModule::CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input,
                 result.recount_lip[row][0] = calcRecoutLip(0, result.lipids, result.ultimate[row][0]);
             if (comp_num == 2)
             {
-                for (int col = 0; col < result.comp_num; ++col)
+                for (uint32_t col = 0; col < result.comp_num; ++col)
                     result.recount_lip[row][col] = calcRecoutLip(col, result.lipids, result.ultimate[row][col]);
             }
             if (comp_num == 3)
             {
-                for (int col = 0; col < result.comp_num; ++col)
+                for (uint32_t col = 0; col < result.comp_num; ++col)
                     result.recount_lip[row][col] = calcRecoutLip(col, result.lipids, result.ultimate[row][col]);
             }
             if (comp_num == 4)
             {
-                for (int col = 0; col < result.comp_num; ++col)
+                for (uint32_t col = 0; col < result.comp_num; ++col)
                     result.recount_lip[row][col] = calcRecoutLip(col, result.lipids, result.ultimate[row][col]);
             }
             if (comp_num == 5)
             {
-                for (int col = 0; col < result.comp_num; ++col)
+                for (uint32_t col = 0; col < result.comp_num; ++col)
                     result.recount_lip[row][col] = calcRecoutLip(col, result.lipids, result.ultimate[row][col]);
             }
             result.ratio_calc[row]        = calcRatioCalc(row, result.prop, result.recount_lip);
@@ -106,7 +106,7 @@ CalculateModule::CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input,
     result.k_general                   = calcBalanceIndexGeneral(result.balance_index, result.biological_value, result.amino_acid_comp_ratio_coef);
 }
 //================================================================================================================================
-void CalculateModule::calcInit(int comp_num) noexcept
+void CalculateModule::calcInit(uint32_t comp_num) noexcept
 {
     result.comp_num = comp_num;
 
@@ -116,22 +116,22 @@ void CalculateModule::calcInit(int comp_num) noexcept
     }
     if (comp_num == 2)
     {
-        for (int i = 0; i < comp_num; ++i)
+        for (uint32_t i = 0; i < comp_num; ++i)
             result.prop[i] = input[0][i]->value();
     }
     if (comp_num == 3)
     {
-        for (int i = 0; i < comp_num; ++i)
+        for (uint32_t i = 0; i < comp_num; ++i)
             result.prop[i] = input[0][i]->value();
     }
     if (comp_num == 4)
     {
-        for (int i = 0; i < comp_num; ++i)
+        for (uint32_t i = 0; i < comp_num; ++i)
             result.prop[i] = input[0][i]->value();
     }
     if (comp_num == 5)
     {
-        for (int i = 0; i < comp_num; ++i)
+        for (uint32_t i = 0; i < comp_num; ++i)
             result.prop[i] = input[0][i]->value();
     }
     //------------------------------------------------------------------------------------------
@@ -141,27 +141,27 @@ void CalculateModule::calcInit(int comp_num) noexcept
     }
     if (comp_num == 2)
     {
-        for (int i = 0; i < comp_num; ++i)
+        for (uint32_t i = 0; i < comp_num; ++i)
             result.protein[i] = input[1][i]->value();
     }
     if (comp_num == 3)
     {
-        for (int i = 0; i < comp_num; ++i)
+        for (uint32_t i = 0; i < comp_num; ++i)
             result.protein[i] = input[1][i]->value();
     }
     if (comp_num == 4)
     {
-        for (int i = 0; i < comp_num; ++i)
+        for (uint32_t i = 0; i < comp_num; ++i)
             result.protein[i] = input[1][i]->value();
     }
     if (comp_num == 5)
     {
-        for (int i = 0; i < comp_num; ++i)
+        for (uint32_t i = 0; i < comp_num; ++i)
             result.protein[i] = input[1][i]->value();
     }
     //------------------------------------------------------------------------------------------
 
-    for (int row = 2; row < AMI+2; ++row)
+    for (uint32_t row = 2; row < AMI+2; ++row)
     {
         if (comp_num == 1)
         {
@@ -169,22 +169,22 @@ void CalculateModule::calcInit(int comp_num) noexcept
         }
         if (comp_num == 2)
         {
-            for (int col = 0; col < comp_num; ++col)
+            for (uint32_t col = 0; col < comp_num; ++col)
                 result.comp[row-2][col] = input[row][col]->value();
         }
         if (comp_num == 3)
         {
-            for (int col = 0; col < comp_num; ++col)
+            for (uint32_t col = 0; col < comp_num; ++col)
                 result.comp[row-2][col] = input[row][col]->value();
         }
         if (comp_num == 4)
         {
-            for (int col = 0; col < comp_num; ++col)
+            for (uint32_t col = 0; col < comp_num; ++col)
                 result.comp[row-2][col] = input[row][col]->value();
         }
         if (comp_num == 5)
         {
-            for (int col = 0; col < comp_num; ++col)
+            for (uint32_t col = 0; col < comp_num; ++col)
                 result.comp[row-2][col] = input[row][col]->value();
         }
     }
@@ -195,26 +195,26 @@ void CalculateModule::calcInit(int comp_num) noexcept
     }
     if (comp_num == 2)
     {
-        for (int i = 0; i < comp_num; ++i)
+        for (uint32_t i = 0; i < comp_num; ++i)
             result.lipids[i] = input[11][i]->value();
     }
     if (comp_num == 3)
     {
-        for (int i = 0; i < comp_num; ++i)
+        for (uint32_t i = 0; i < comp_num; ++i)
             result.lipids[i] = input[11][i]->value();
     }
     if (comp_num == 4)
     {
-        for (int i = 0; i < comp_num; ++i)
+        for (uint32_t i = 0; i < comp_num; ++i)
             result.lipids[i] = input[11][i]->value();
     }
     if (comp_num == 5)
     {
-        for (int i = 0; i < comp_num; ++i)
+        for (uint32_t i = 0; i < comp_num; ++i)
             result.lipids[i] = input[11][i]->value();
     }
     //------------------------------------------------------------------------------------------
-    for (int row = 12; row < LIP_PROP+12; ++row)
+    for (uint32_t row = 12; row < LIP_PROP+12; ++row)
     {
         if (comp_num == 1)
         {
@@ -222,28 +222,28 @@ void CalculateModule::calcInit(int comp_num) noexcept
         }
         if (comp_num == 2)
         {
-            for (int col = 0; col < comp_num; ++col)
+            for (uint32_t col = 0; col < comp_num; ++col)
                 result.ultimate[row-12][col] = input[row][col]->value();
         }
         if (comp_num == 3)
         {
-            for (int col = 0; col < comp_num; ++col)
+            for (uint32_t col = 0; col < comp_num; ++col)
                 result.ultimate[row-12][col] = input[row][col]->value();
         }
         if (comp_num == 4)
         {
-            for (int col = 0; col < comp_num; ++col)
+            for (uint32_t col = 0; col < comp_num; ++col)
                 result.ultimate[row-12][col] = input[row][col]->value();
         }
         if (comp_num == 5)
         {
-            for (int col = 0; col < comp_num; ++col)
+            for (uint32_t col = 0; col < comp_num; ++col)
                 result.ultimate[row-12][col] = input[row][col]->value();
         }
     }
 }
 //================================================================================================================================
-double CalculateModule::calcRecountProteins(int col, double protein[], double comp) const // col вместо sign
+double CalculateModule::calcRecountProteins(uint32_t col, double protein[], double comp) const // col вместо sign
 {
     if (result.comp_num == 1)
         return comp * 100 / protein[0];
@@ -283,7 +283,7 @@ double CalculateModule::calcRecountProteins(int col, double protein[], double co
     throw CalcException(1);
 }
 //================================================================================================================================
-double CalculateModule::calcAKP(int row, double prop[], double recount[][MAX_COMP]) const
+double CalculateModule::calcAKP(uint32_t row, double prop[], double recount[][MAX_COMP]) const
 {
     if (result.comp_num == 1)
         return recount[row][0];
@@ -314,7 +314,7 @@ double CalculateModule::calcFattyAcidPer100g(double akp, const double fao_voz200
         return akp / fao_voz2007;
 }
 //================================================================================================================================
-double CalculateModule::calcRecoutLip(int row, double lipids[], double ultimate) const
+double CalculateModule::calcRecoutLip(uint32_t row, double lipids[], double ultimate) const
 {
     if (result.comp_num == 1)
         return ultimate * 100 / lipids[0];
@@ -359,7 +359,7 @@ double CalculateModule::calcKoefRation(double min_aminoacidskor, double aminoaci
     return min_aminoacidskor / aminoacidskor;
 }
 //================================================================================================================================
-double CalculateModule::calcRatioCalc(int row, double prop[], double recount_lip[][MAX_COMP]) const
+double CalculateModule::calcRatioCalc(uint32_t row, double prop[], double recount_lip[][MAX_COMP]) const
 {
     if (result.comp_num == 1)
         return recount_lip[row][0];
