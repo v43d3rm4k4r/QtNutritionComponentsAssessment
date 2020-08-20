@@ -5,9 +5,11 @@
 #include <QResizeEvent>
 #include "CalculateModule.h"
 
+#include "SummaryWindow.h" // !!!
+
 //======================================================================================================
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow)
+    : QMainWindow{parent}, ui{new Ui::MainWindow}
 {
     ui->setupUi(this);
 
@@ -28,14 +30,14 @@ MainWindow::MainWindow(QWidget *parent)
     spinBoxComp_valueChanged(1);
 }
 //======================================================================================================
-void MainWindow::spinBoxComp_valueChanged(uint32_t value)
+void MainWindow::spinBoxComp_valueChanged(int value)
 {
-    static uint32_t earlyer_value = 1;
+    static int32_t earlyer_value = 1;
 
     switch (value)
     {
     case 1:
-        for (uint32_t i = value; i <= 5; ++i)
+        for (int32_t i = value; i <= 5; ++i)
         {
             for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
             {
@@ -55,7 +57,7 @@ void MainWindow::spinBoxComp_valueChanged(uint32_t value)
     case 2:
         if (value < earlyer_value)
         {
-            for (uint32_t i = 3; i <= 5; ++i)
+            for (int32_t i = 3; i <= 5; ++i)
             {
                 for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
                 {
@@ -68,7 +70,7 @@ void MainWindow::spinBoxComp_valueChanged(uint32_t value)
         }
         else
         {
-            for (uint32_t i = earlyer_value; i <= value; ++i)
+            for (int32_t i = earlyer_value; i <= value; ++i)
             {
                 for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
                 {
@@ -85,7 +87,7 @@ void MainWindow::spinBoxComp_valueChanged(uint32_t value)
     case 3:
         if (value < earlyer_value)
         {
-            for (int i = 4; i <= 5; ++i)
+            for (int32_t i = 4; i <= 5; ++i)
             {
                 for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
                 {
@@ -97,7 +99,7 @@ void MainWindow::spinBoxComp_valueChanged(uint32_t value)
         }
         else
         {
-            for (uint32_t i = earlyer_value; i <= value; ++i)
+            for (int32_t i = earlyer_value; i <= value; ++i)
             {
                 for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
                 {
@@ -123,7 +125,7 @@ void MainWindow::spinBoxComp_valueChanged(uint32_t value)
         }
         else
         {
-            for (uint32_t i = earlyer_value; i <= value; ++i)
+            for (int32_t i = earlyer_value; i <= value; ++i)
             {
                 for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
                 {
@@ -139,7 +141,7 @@ void MainWindow::spinBoxComp_valueChanged(uint32_t value)
 
     case 5:
         // тут только увеличение
-        for (uint32_t i = earlyer_value; i <= value; ++i)
+        for (int32_t i = earlyer_value; i <= value; ++i)
         {
             for (QDoubleSpinBox* currentSpinBox : getColumnOfCompSpinboxes(i))
             {
@@ -466,20 +468,12 @@ void MainWindow::pushButtonCalculate_clicked()
 
     CalculateModule* cModule = new CalculateModule(getAllSpinBoxes(), ui->spinBoxComp->value());
 
-    /*summary = cModule->getResult();
-    delete cModule;*/
-
+    summary = cModule->getResult();
+    delete cModule;
 
     showResults();
 
-
-
-
-
-
-
-
-
+    summary = {0};
 }
 //======================================================================================================
 QVector<QVector<QDoubleSpinBox*>> MainWindow::getAllSpinBoxes() const
@@ -495,8 +489,10 @@ QVector<QVector<QDoubleSpinBox*>> MainWindow::getAllSpinBoxes() const
 //======================================================================================================
 void MainWindow::showResults()
 {
-    QWidget* wgt = new ResultWindow(this);
-    wgt->resize(500, 500);
+    SummaryWindow* wgt = new SummaryWindow(this, summary);
+
+    wgt->setWindowFlags(Qt::Window);
+
     wgt->show();
 
 

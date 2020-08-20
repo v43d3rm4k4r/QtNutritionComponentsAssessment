@@ -17,14 +17,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     CalculateModule.cpp \
+    SummaryWindow.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     CalculateModule.h \
+    SummaryWindow.h \
     mainwindow.h
 
 FORMS += \
+    SummaryWindow.ui \
     mainwindow.ui
 
 # Default rules for deployment.
