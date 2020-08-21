@@ -28,11 +28,28 @@ MainWindow::MainWindow(QWidget *parent)
 
     setTabOrder();
     spinBoxComp_valueChanged(1);
+
+    QPixmap bkgnd("../Backgrounds/Background1.png");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(palette);
+
+    setMinimumSize(QSize(1183, 773));
 }
 //======================================================================================================
 void MainWindow::spinBoxComp_valueChanged(int value)
 {
     static int32_t earlyer_value = 1;
+
+    if (value < earlyer_value)
+    {
+        ui->doubleSpinBoxPropComp1->setValue(0.0);
+        ui->doubleSpinBoxPropComp2->setValue(0.0);
+        ui->doubleSpinBoxPropComp3->setValue(0.0);
+        ui->doubleSpinBoxPropComp4->setValue(0.0);
+        ui->doubleSpinBoxPropComp5->setValue(0.0);
+    }
 
     switch (value)
     {
@@ -489,7 +506,7 @@ QVector<QVector<QDoubleSpinBox*>> MainWindow::getAllSpinBoxes() const
 //======================================================================================================
 void MainWindow::showResults()
 {
-    SummaryWindow* wgt = new SummaryWindow(this, summary);
+    SummaryWindow* wgt = new SummaryWindow(summary, this);
 
     wgt->setWindowFlags(Qt::Window);
 

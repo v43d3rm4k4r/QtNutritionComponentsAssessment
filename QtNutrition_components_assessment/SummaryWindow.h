@@ -5,9 +5,9 @@
 #include "CalculateModule.h"
 #include "ui_SummaryWindow.h"
 
-QT_BEGIN_NAMESPACE
+/*QT_BEGIN_NAMESPACE
 namespace Ui { class SummaryWindow; }
-QT_END_NAMESPACE
+QT_END_NAMESPACE*/
 
 
 class SummaryWindow : public QFrame
@@ -15,8 +15,13 @@ class SummaryWindow : public QFrame
     Q_OBJECT
 
     Ui_Frame* ui;
+    Summary& sum;
+
+private slots:
+    void pushButtonSave_clicked();
+    void pushButtonShowChart_clicked();
 
 public:
-    SummaryWindow(QWidget* parent = nullptr, const Summary& summary = {0});
+    SummaryWindow(Summary& summary, QWidget* parent = nullptr);
     virtual ~SummaryWindow();
 };

@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,12 +18,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     CalculateModule.cpp \
     SummaryWindow.cpp \
+    donutbreakdownchart.cpp \
     main.cpp \
+    mainslice.cpp \
     mainwindow.cpp
 
 HEADERS += \
     CalculateModule.h \
     SummaryWindow.h \
+    donutbreakdownchart.h \
+    mainslice.h \
     mainwindow.h
 
 FORMS += \
