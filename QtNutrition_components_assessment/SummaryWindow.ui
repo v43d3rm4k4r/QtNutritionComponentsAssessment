@@ -30,6 +30,11 @@
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QTextEdit" name="textEdit">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="readOnly">
         <bool>true</bool>
        </property>
@@ -39,6 +44,11 @@
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QPushButton" name="pushButtonSave">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Сохранить</string>
          </property>
@@ -46,6 +56,11 @@
        </item>
        <item>
         <widget class="QPushButton" name="pushButtonShowChart">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Вывести график</string>
          </property>

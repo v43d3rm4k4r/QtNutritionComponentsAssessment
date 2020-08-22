@@ -15,13 +15,17 @@ class SummaryWindow : public QFrame
     Q_OBJECT
 
     Ui_Frame* ui;
-    Summary& sum;
+    Summary& summary;
+    //QMainWindow& mainWindow;
+
+    void showResults();
+    void closeEvent(QCloseEvent* event) override;
 
 private slots:
     void pushButtonSave_clicked();
     void pushButtonShowChart_clicked();
 
 public:
-    SummaryWindow(Summary& summary, QWidget* parent = nullptr);
+    SummaryWindow(Summary& summary, QMainWindow& mainWindow, QWidget* parent);
     virtual ~SummaryWindow();
 };

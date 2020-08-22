@@ -37,7 +37,11 @@ private slots:
     void spinBoxComp_valueChanged(int value);
     void pushButtonCalculate_clicked();
 
+public slots:
+
+
 public:
+    void resetMainWindow();
     MainWindow(QWidget* parent = nullptr);
     virtual ~MainWindow();
 };

@@ -490,7 +490,7 @@ void MainWindow::pushButtonCalculate_clicked()
 
     showResults();
 
-    summary = {0};
+    //summary = {0};
 }
 //======================================================================================================
 QVector<QVector<QDoubleSpinBox*>> MainWindow::getAllSpinBoxes() const
@@ -506,14 +506,25 @@ QVector<QVector<QDoubleSpinBox*>> MainWindow::getAllSpinBoxes() const
 //======================================================================================================
 void MainWindow::showResults()
 {
-    SummaryWindow* wgt = new SummaryWindow(summary, this);
+    //this->setEnabled(false);
+
+    // вместо всего этого понять что такое модальные окна
+    SummaryWindow* wgt = new SummaryWindow(summary, *this, this);
 
     wgt->setWindowFlags(Qt::Window);
 
     wgt->show();
 
 
+    // ПРИ ЗАКРЫТИИ ОКНА ТЕКСТОВОГО ВЫВОДА ОБНУЛИТЬ СТРУКТУРУ И ВКЛЮЧИТЬ ГЛАВНОЕ ОКНО!!!
+    //wgt->setEnabled(true);
 
+}
+//======================================================================================================
+void MainWindow::resetMainWindow()
+{
+    this->setEnabled(true);
+    summary = {0};
 }
 //======================================================================================================
 MainWindow::~MainWindow()
