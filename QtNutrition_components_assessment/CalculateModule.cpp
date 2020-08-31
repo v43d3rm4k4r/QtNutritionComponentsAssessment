@@ -69,7 +69,7 @@ CalculateModule::CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input,
                 result.recount_lip[row][0] = calcRecoutLip(0, result.lipids, result.ultimate[row][0]);
             if (comp_num == 2)
             {
-                for (uint32_t col = 0; col < result.comp_num; ++col)
+                for (uint32_t col = 0; col < result.comp_num; ++col) /// !!!
                     result.recount_lip[row][col] = calcRecoutLip(col, result.lipids, result.ultimate[row][col]);
             }
             if (comp_num == 3)

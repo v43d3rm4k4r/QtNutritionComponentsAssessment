@@ -19,7 +19,6 @@ class SummaryWindow : public QFrame
     //QMainWindow& mainWindow;
 
     void showResults();
-    void closeEvent(QCloseEvent* event) override;
 
 private slots:
     void pushButtonSave_clicked();

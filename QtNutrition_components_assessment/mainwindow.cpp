@@ -36,6 +36,10 @@ MainWindow::MainWindow(QWidget *parent)
     this->setPalette(palette);
 
     setMinimumSize(QSize(1183, 773));
+
+#ifdef DEBUG
+    DEBUG_setAllSpinboxes();
+#endif
 }
 //======================================================================================================
 void MainWindow::spinBoxComp_valueChanged(int value)
@@ -506,19 +510,12 @@ QVector<QVector<QDoubleSpinBox*>> MainWindow::getAllSpinBoxes() const
 //======================================================================================================
 void MainWindow::showResults()
 {
-    //this->setEnabled(false);
-
-    // вместо всего этого понять что такое модальные окна
     SummaryWindow* wgt = new SummaryWindow(summary, *this, this);
 
     wgt->setWindowFlags(Qt::Window);
 
+    wgt->setWindowModality(Qt::ApplicationModal);
     wgt->show();
-
-
-    // ПРИ ЗАКРЫТИИ ОКНА ТЕКСТОВОГО ВЫВОДА ОБНУЛИТЬ СТРУКТУРУ И ВКЛЮЧИТЬ ГЛАВНОЕ ОКНО!!!
-    //wgt->setEnabled(true);
-
 }
 //======================================================================================================
 void MainWindow::resetMainWindow()
@@ -531,3 +528,44 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+#ifdef DEBUG
+void MainWindow::DEBUG_setAllSpinboxes()
+{
+    ui->spinBoxComp->setValue(2);
+    ui->doubleSpinBoxPropComp1->setValue(0.10);
+    ui->doubleSpinBoxPropComp2->setValue(0.90);
+    ui->doubleSpinBoxProteinsComp1->setValue(18.60);
+    ui->doubleSpinBoxProteinsComp2->setValue(7.90);
+    ui->doubleSpinBoxValin1->setValue(0.94);
+    ui->doubleSpinBoxValin2->setValue(0.41);
+    ui->doubleSpinBoxGistidin1->setValue(0.48);
+    ui->doubleSpinBoxGistidin2->setValue(0.19);
+    ui->doubleSpinBoxIzoleycin1->setValue(0.67);
+    ui->doubleSpinBoxIzoleycin2->setValue(0.36);
+    ui->doubleSpinBoxLeycin1->setValue(1.28);
+    ui->doubleSpinBoxLeycin2->setValue(0.63);
+    ui->doubleSpinBoxLizin1->setValue(0.47);
+    ui->doubleSpinBoxLizin2->setValue(0.38);
+    ui->doubleSpinBoxMetioninCistein1->setValue(0.69);
+    ui->doubleSpinBoxMetioninCistein2->setValue(0.32);
+    ui->doubleSpinBoxTreonin1->setValue(0.48);
+    ui->doubleSpinBoxTreonin2->setValue(0.29);
+    ui->doubleSpinBoxTriptofan1->setValue(0.13);
+    ui->doubleSpinBoxTriptofan2->setValue(0.10);
+    ui->doubleSpinBoxFenilalaninTirozin1->setValue(1.54);
+    ui->doubleSpinBoxFenilalaninTirozin2->setValue(0.69);
+    ui->doubleSpinBoxLypidsComp1->setValue(57.70);
+    ui->doubleSpinBoxLypidsComp2->setValue(14.10);
+    ui->doubleSpinBoxSaturatedFattyAcids1->setValue(5.00);
+    ui->doubleSpinBoxSaturatedFattyAcids2->setValue(2.87);
+    ui->doubleSpinBoxMonounsaturatedFattyAcids1->setValue(36.70);
+    ui->doubleSpinBoxMonounsaturatedFattyAcids2->setValue(3.52);
+    ui->doubleSpinBoxPolyunsaturatedFattyAcids1->setValue(12.80);
+    ui->doubleSpinBoxPolyunsaturatedFattyAcids2->setValue(6.79);
+    ui->doubleSpinBoxOmega6_1->setValue(12.50);
+    ui->doubleSpinBoxOmega6_2->setValue(5.98);
+    ui->doubleSpinBoxOmega3_1->setValue(0.30);
+    ui->doubleSpinBoxOmega3_2->setValue(0.78);
+}
+#endif
