@@ -71,6 +71,26 @@ CalculateModule::CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input,
             {
                 for (uint32_t col = 0; col < result.comp_num; ++col) /// !!!
                     result.recount_lip[row][col] = calcRecoutLip(col, result.lipids, result.ultimate[row][col]);
+
+                // Выяснили, что result.recount_lip омеги-3 и омеги-6 одинаков, поскольку
+                // у них одинаков и ultimate. Копаем глубже.
+                /*
+                if (row == 3)
+                {
+                    qDebug() << "result.ultimate[3][0]=" <<result.ultimate[row][0];
+                    qDebug() << "result.ultimate[3][1]=" <<result.ultimate[row][1];
+                    //qDebug() << "result.recount_lip[3][0]=" << result.recount_lip[row][0];
+                    //qDebug() << "result.recount_lip[3][1]=" << result.recount_lip[row][1];
+                }
+
+                if (row == 4)
+                {
+                    qDebug() << "result.ultimate[4][0]=" <<result.ultimate[row][0];
+                    qDebug() << "result.ultimate[4][1]=" <<result.ultimate[row][1];
+                    //qDebug() << "result.recount_lip[4][0]=" << result.recount_lip[row][0];
+                    //qDebug() << "result.recount_lip[4][1]=" << result.recount_lip[row][1];
+                }*/
+
             }
             if (comp_num == 3)
             {
@@ -89,9 +109,10 @@ CalculateModule::CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input,
             }
             result.ratio_calc[row]        = calcRatioCalc(row, result.prop, result.recount_lip);
             result.lip_balance_ratio[row] = calcLipBalanceRatio(result.ratio_calc[row], result.fao_voz2008[row]);
-            calcFattyAcidCompliance(result.lip_balance_ratio, &result.fattyAcidComplianceResult2,
+            calcFattyAcidCompliance(result.lip_balance_ratio, &result.fattyAcidComplianceResult1,
                                                               &result.fattyAcidComplianceResult2);
         }
+
     }
     catch (std::exception& ex)
     {
@@ -224,6 +245,8 @@ void CalculateModule::calcInit(uint32_t comp_num) noexcept
         {
             for (uint32_t col = 0; col < comp_num; ++col)
                 result.ultimate[row-12][col] = input[row][col]->value();
+            //qDebug() << "input[12][0]->value()==" << input[row][0]->value();
+            //qDebug() << "input[12][1]->value()==" << input[row][1]->value();
         }
         if (comp_num == 3)
         {
@@ -377,7 +400,7 @@ double CalculateModule::calcRatioCalc(uint32_t row, double prop[], double recoun
     throw CalcException(4);
 }
 //================================================================================================================================
-double CalculateModule::calcLipBalanceRatio(double ratio_calc, const double fao_voz2008) const noexcept
+double CalculateModule::calcLipBalanceRatio(double ratio_calc, double fao_voz2008) const noexcept
 {
     if (ratio_calc <= fao_voz2008)
         return ratio_calc / fao_voz2008;
@@ -395,11 +418,13 @@ void CalculateModule::calcFattyAcidCompliance
         multi1 *= lip_balance_ratio[i];
 
     *fattyAcidComplianceResult1 = pow(multi1, 1.0 / 3.0);
+    qDebug() << "*fattyAcidComplianceResult1" << *fattyAcidComplianceResult1;
 
     for (int i = 0; i < 5; i++)
         multi2 *= lip_balance_ratio[i];
 
     *fattyAcidComplianceResult2 = pow(multi2, 1.0 / 5.0);
+    qDebug() << "*fattyAcidComplianceResult2" << *fattyAcidComplianceResult2;
 }
 //================================================================================================================================
 double CalculateModule::calcAminoacidskorSum(double aminoacidskor[]) const noexcept

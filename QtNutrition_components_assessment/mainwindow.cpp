@@ -410,11 +410,11 @@ QVector<QDoubleSpinBox*> MainWindow::getRowOfSpinboxes(uint32_t row) const
                                            << ui->doubleSpinBoxOmega6_4
                                            << ui->doubleSpinBoxOmega6_5;
     case 17:
-        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxOmega6_1
-                                           << ui->doubleSpinBoxOmega6_2
-                                           << ui->doubleSpinBoxOmega6_3
-                                           << ui->doubleSpinBoxOmega6_4
-                                           << ui->doubleSpinBoxOmega6_1;
+        return QVector<QDoubleSpinBox*>()  << ui->doubleSpinBoxOmega3_1
+                                           << ui->doubleSpinBoxOmega3_2
+                                           << ui->doubleSpinBoxOmega3_3
+                                           << ui->doubleSpinBoxOmega3_4
+                                           << ui->doubleSpinBoxOmega3_5;
         break;
 
     }

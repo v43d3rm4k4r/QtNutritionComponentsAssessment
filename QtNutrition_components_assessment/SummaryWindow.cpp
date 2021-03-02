@@ -26,7 +26,7 @@ SummaryWindow::SummaryWindow(Summary& summary, QMainWindow& mainWindow, QWidget*
     //setMinimumSize(QSize(1183, 773))
 
 
-    showResults();
+    this->showResults();
     this->setEnabled(true);
     this->setMinimumWidth(570);
 
@@ -34,7 +34,7 @@ SummaryWindow::SummaryWindow(Summary& summary, QMainWindow& mainWindow, QWidget*
 //======================================================================================================
 void SummaryWindow::showResults()
 {
-    const uint8_t precision = 2;
+    const uint8_t precision = 2u;
 
     for (uint32_t i = 0; i < AMI; ++i)
     {
@@ -115,7 +115,7 @@ void SummaryWindow::showResults()
 
     } // for
 
-    ui->textEdit->append("========ОЦЕНКА БЕЛКОВОЙ СОСТАВЛЯЮЩЕЙ:========");
+    ui->textEdit->append("============ОЦЕНКА БЕЛКОВОЙ СОСТАВЛЯЮЩЕЙ:============");
     ui->textEdit->append(QString("Коэффициент разбалансированности = %1")
                          .arg(summary.kras, 0, 'f', precision));
     ui->textEdit->append(QString("Биологическая ценность = %1")
@@ -362,7 +362,7 @@ void SummaryWindow::showResults()
         ui->textEdit->append("=================================================");
     } // for
 
-    ui->textEdit->append("========ОЦЕНКА ЛИПИДНОЙ СОСТАВЛЯЮЩЕЙ:========");
+    ui->textEdit->append("============ОЦЕНКА ЛИПИДНОЙ СОСТАВЛЯЮЩЕЙ:============");
     ui->textEdit->append(QString("Коэффициент жирнокислотного соответствия (при i=3) = %1").arg(summary.fattyAcidComplianceResult1));
     ui->textEdit->append(QString("Коэффициент жирнокислотного соответствия (при i=5) = %1").arg(summary.fattyAcidComplianceResult2));
 

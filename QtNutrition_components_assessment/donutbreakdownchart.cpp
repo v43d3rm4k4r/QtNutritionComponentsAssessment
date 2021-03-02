@@ -81,7 +81,7 @@ void DonutBreakdownChart::updateLegendMarkers()
         const auto markers = legend()->markers(series);
         for (QLegendMarker *marker : markers)
         {
-            QPieLegendMarker *pieMarker = qobject_cast<QPieLegendMarker *>(marker);
+            QPieLegendMarker *pieMarker = qobject_cast<QPieLegendMarker*>(marker);
             if (series == m_mainSeries)
             {
                 // hide markers from main series

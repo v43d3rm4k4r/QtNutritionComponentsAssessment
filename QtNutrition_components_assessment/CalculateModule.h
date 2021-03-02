@@ -110,11 +110,8 @@ class CalculateModule
 
 public:
     // вызываем в конструкторе все методы вычислений
-    explicit CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input, uint32_t comp_num) noexcept;
+    CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input, uint32_t comp_num) noexcept;
 
     const Summary& getResult() const;
-
-
-
 };
 
