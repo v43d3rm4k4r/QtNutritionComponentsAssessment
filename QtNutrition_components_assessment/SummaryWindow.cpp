@@ -28,8 +28,7 @@ SummaryWindow::SummaryWindow(Summary& summary, QMainWindow& mainWindow, QWidget*
 
     this->showResults();
     this->setEnabled(true);
-    this->setMinimumWidth(570);
-
+    this->setMinimumWidth(650);
 }
 //======================================================================================================
 void SummaryWindow::showResults()
