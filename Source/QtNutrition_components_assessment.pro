@@ -17,22 +17,22 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     CalculateModule.cpp \
+    DonutBreakdownChart.cpp \
+    MainSlice.cpp \
+    MainWindow.cpp \
     SummaryWindow.cpp \
-    donutbreakdownchart.cpp \
-    main.cpp \
-    mainslice.cpp \
-    mainwindow.cpp
+    main.cpp
 
 HEADERS += \
     CalculateModule.h \
-    SummaryWindow.h \
-    donutbreakdownchart.h \
-    mainslice.h \
-    mainwindow.h
+    DonutBreakdownChart.h \
+    MainSlice.h \
+    MainWindow.h \
+    SummaryWindow.h
 
 FORMS += \
-    SummaryWindow.ui \
-    mainwindow.ui
+    MainWindow.ui \
+    SummaryWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

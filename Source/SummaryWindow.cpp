@@ -3,10 +3,10 @@
 //#include <QtWidgets/QMainWindow>
 #include <QtWidgets/QStatusBar>
 #include <QtCharts/QChartView>
-#include "donutbreakdownchart.h"
+#include "DonutBreakdownChart.h"
 
 SummaryWindow::SummaryWindow(Summary& summary, QMainWindow& mainWindow, QWidget* parent)
-    : QFrame{parent}, ui{new Ui_Frame}, summary{summary}//, mainWindow{mainWindow}
+    : QFrame{parent}, ui{new Ui_Frame}, summary{summary}
 {
     ui->setupUi(this);
 
@@ -22,9 +22,6 @@ SummaryWindow::SummaryWindow(Summary& summary, QMainWindow& mainWindow, QWidget*
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palette);
-
-    //setMinimumSize(QSize(1183, 773))
-
 
     this->showResults();
     this->setEnabled(true);
@@ -437,9 +434,7 @@ void SummaryWindow::showResults()
         ui->textEdit->setTextColor(QColor(Qt::black));
     }
 
-
     ui->textEdit->append("=================================================");
-
 }
 //======================================================================================================
 /*void SummaryWindow::closeEvent(QCloseEvent* event)
@@ -460,7 +455,6 @@ void SummaryWindow::pushButtonShowChart_clicked()
 {
     const QColor proteins_color(Qt::red);
     const QColor lipids_color(Qt::blue);
-
 
     uint32_t allAKP = 0;
     for (const auto& current : summary.akp)
@@ -509,7 +503,6 @@ void SummaryWindow::pushButtonShowChart_clicked()
     chartView->move(x()-100, y());
     chartView->setWindowModality(Qt::ApplicationModal);
     chartView->show();
-
 
     /*chartViewProteins->setWindowTitle("Протеины");
     chartViewProteins->resize(800, 500);

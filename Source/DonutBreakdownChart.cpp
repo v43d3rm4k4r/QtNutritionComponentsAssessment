@@ -1,5 +1,5 @@
-#include "donutbreakdownchart.h"
-#include "mainslice.h"
+#include "DonutBreakdownChart.h"
+#include "MainSlice.h"
 #include <QtCharts/QPieSlice>
 #include <QtCharts/QPieLegendMarker>
 
@@ -10,9 +10,9 @@ DonutBreakdownChart::DonutBreakdownChart(QGraphicsItem *parent, Qt::WindowFlags 
     : QChart(QChart::ChartTypeCartesian, parent, wFlags)
 {
     // create the series for main center pie
-    m_mainSeries = new QPieSeries();
-    m_mainSeries->setPieSize(0.7);
-    QChart::addSeries(m_mainSeries);
+    _mainSeries = new QPieSeries();
+    _mainSeries->setPieSize(0.7);
+    QChart::addSeries(_mainSeries);
 }
 //![1]
 
@@ -25,7 +25,7 @@ void DonutBreakdownChart::addBreakdownSeries(QPieSeries *breakdownSeries, QColor
     MainSlice *mainSlice = new MainSlice(breakdownSeries);
     mainSlice->setName(breakdownSeries->name());
     mainSlice->setValue(breakdownSeries->sum());
-    m_mainSeries->append(mainSlice);
+    _mainSeries->append(mainSlice);
 
     // customize the slice
     mainSlice->setBrush(color);
@@ -61,7 +61,7 @@ void DonutBreakdownChart::addBreakdownSeries(QPieSeries *breakdownSeries, QColor
 void DonutBreakdownChart::recalculateAngles()
 {
     qreal angle = 0;
-    const auto slices = m_mainSeries->slices();
+    const auto slices = _mainSeries->slices();
     for (QPieSlice *slice : slices) {
         QPieSeries *breakdownSeries = qobject_cast<MainSlice *>(slice)->breakdownSeries();
         breakdownSeries->setPieStartAngle(angle);
@@ -82,7 +82,7 @@ void DonutBreakdownChart::updateLegendMarkers()
         for (QLegendMarker *marker : markers)
         {
             QPieLegendMarker *pieMarker = qobject_cast<QPieLegendMarker*>(marker);
-            if (series == m_mainSeries)
+            if (series == _mainSeries)
             {
                 // hide markers from main series
                 pieMarker->setVisible(false);

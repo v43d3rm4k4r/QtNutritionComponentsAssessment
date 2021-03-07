@@ -9,7 +9,6 @@
 namespace Ui { class SummaryWindow; }
 QT_END_NAMESPACE*/
 
-
 class SummaryWindow : public QFrame
 {
     Q_OBJECT

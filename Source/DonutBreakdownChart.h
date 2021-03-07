@@ -16,7 +16,7 @@ private:
     void updateLegendMarkers();
 
 private:
-    QPieSeries *m_mainSeries;
+    QPieSeries* _mainSeries;
 };
 
 

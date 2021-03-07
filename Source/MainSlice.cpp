@@ -1,4 +1,4 @@
-#include "mainslice.h"
+#include "MainSlice.h"
 
 QT_CHARTS_USE_NAMESPACE
 

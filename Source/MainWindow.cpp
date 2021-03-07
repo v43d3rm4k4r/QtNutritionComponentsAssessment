@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "MainWindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QDebug>
@@ -182,7 +182,6 @@ void MainWindow::spinBoxComp_valueChanged(int value)
         ui->doubleSpinBoxPropComp1->setValue(0.0);
         ui->doubleSpinBoxPropComp1->setEnabled(true);
     }
-
 
     //resize(minimumSize());
     qDebug() << size().width();
@@ -421,7 +420,6 @@ QVector<QDoubleSpinBox*> MainWindow::getRowOfSpinboxes(uint32_t row) const
 
     return QVector<QDoubleSpinBox*>();
 }
-
 //======================================================================================================
 void MainWindow::changeLabelsFor1Comp()
 {

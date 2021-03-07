@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "MainWindow.h"
 #include <cmath>
 
 CalculateModule::CalculateModule(const QVector<QVector<QDoubleSpinBox*>>& input, uint32_t comp_num) noexcept
