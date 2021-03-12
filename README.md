@@ -15,7 +15,12 @@ It also evaluates the Harrington desirability scale for each component.
 
 
 
- ![Image alt](https://github.com/v43d3rm4k4r/QtNutrition_components_assessment/raw/master/Images/image1.png)  
- ![Image alt](https://github.com/v43d3rm4k4r/QtNutrition_components_assessment/raw/master/Images/image2.png)
+ ![Image alt](https://github.com/vaedermakar/QtNutrition_components_assessment/raw/master/Images/image1.png)  
+ ![Image alt](https://github.com/vaedermakar/QtNutrition_components_assessment/raw/master/Images/image2.png)
+ 
+ # Current problems/bugs/imperfections:  
+- only Russian available at the moment;
+- one of the coefficients of fatty acid is calculated incorrectly;
+- QtCharts view is not ready yet;
 
 
