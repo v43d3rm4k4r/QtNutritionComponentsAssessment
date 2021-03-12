@@ -2,7 +2,7 @@
 
 Qt version of Nutrition components assessment  
 
-This program allows you to calculate the following indicators for 100 g. servings of a product consisting of 1–5 components: 
+This program allows you to calculate the following indicators for 100 g. servings of a product consisting of 1–5 ingredients: 
 - amino acids; 
 - rationality and balance coefficients for each essential amino acid (for each component separately and in the product as a whole);
 - amino acid composition coefficient; 
