@@ -453,10 +453,7 @@ void SummaryWindow::pushButtonSave_clicked()
 //======================================================================================================
 void SummaryWindow::pushButtonShowChart_clicked()
 {
-    const QColor proteins_color(Qt::red);
-    const QColor lipids_color(Qt::blue);
-
-    uint32_t allAKP = 0;
+    double allAKP = 0;
     for (const auto& current : summary.akp)
     {
         allAKP += current;
@@ -465,7 +462,7 @@ void SummaryWindow::pushButtonShowChart_clicked()
     proteins->setName("Протеины");
     proteins->append("Протеины", allAKP);
     //-------------------------------------------------------------------------------------------------
-    uint32_t allFatty_acid_per_100g = 0;
+    double allFatty_acid_per_100g = 0;
     for (const auto& current : summary.fatty_acid_per_100g)
     {
         allFatty_acid_per_100g += current;
@@ -482,9 +479,10 @@ void SummaryWindow::pushButtonShowChart_clicked()
     donutBreakdown->setAnimationOptions(QChart::AllAnimations);
     donutBreakdown->setTitle("Оценка белковой и липидной составляющих продукта");
     donutBreakdown->legend()->setAlignment(Qt::AlignRight);
+    //donutBreakdown->legend()->setFont(QFont("Arial", 16));
 
-    donutBreakdown->addBreakdownSeries(proteins, proteins_color);
-    donutBreakdown->addBreakdownSeries(lipids, lipids_color);
+    donutBreakdown->addBreakdownSeries(proteins, Qt::red);
+    donutBreakdown->addBreakdownSeries(lipids, Qt::blue);
 
 
     QChartView *chartView = new QChartView;

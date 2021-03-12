@@ -5,41 +5,39 @@
 
 QT_CHARTS_USE_NAMESPACE
 
-//![1]
-DonutBreakdownChart::DonutBreakdownChart(QGraphicsItem *parent, Qt::WindowFlags wFlags)
+//======================================================================================================
+DonutBreakdownChart::DonutBreakdownChart(QGraphicsItem* parent, Qt::WindowFlags wFlags)
     : QChart(QChart::ChartTypeCartesian, parent, wFlags)
 {
     // create the series for main center pie
-    _mainSeries = new QPieSeries();
+    _mainSeries = new QPieSeries(this);
     _mainSeries->setPieSize(0.7);
     QChart::addSeries(_mainSeries);
 }
-//![1]
-
-//![2]
-void DonutBreakdownChart::addBreakdownSeries(QPieSeries *breakdownSeries, QColor color)
+//======================================================================================================
+void DonutBreakdownChart::addBreakdownSeries(QPieSeries* breakdownSeries, QColor color)
 {
-    QFont font("Arial", 12);
+    QFont font("Arial", 16);
 
     // add breakdown series as a slice to center pie
-    MainSlice *mainSlice = new MainSlice(breakdownSeries);
+    MainSlice* mainSlice = new MainSlice(breakdownSeries);
     mainSlice->setName(breakdownSeries->name());
     mainSlice->setValue(breakdownSeries->sum());
     _mainSeries->append(mainSlice);
 
     // customize the slice
     mainSlice->setBrush(color);
-    mainSlice->setLabelVisible();
+    /*mainSlice->setLabelVisible();
     mainSlice->setLabelColor(Qt::white);
     mainSlice->setLabelPosition(QPieSlice::LabelInsideHorizontal);
-    mainSlice->setLabelFont(font);
+    mainSlice->setLabelFont(font);*/
 
     // position and customize the breakdown series
     breakdownSeries->setPieSize(0.8);
     breakdownSeries->setHoleSize(0.7);
-    breakdownSeries->setLabelsVisible();
+    //breakdownSeries->setLabelsVisible(); // outer labels
     const auto slices = breakdownSeries->slices();
-    for (QPieSlice *slice : slices)
+    foreach (QPieSlice* slice, slices)
     {
         color = color.lighter(115);
         slice->setBrush(color);
@@ -55,33 +53,29 @@ void DonutBreakdownChart::addBreakdownSeries(QPieSeries *breakdownSeries, QColor
     // update customize legend markers
     updateLegendMarkers();
 }
-//![2]
-
-//![3]
+//======================================================================================================
 void DonutBreakdownChart::recalculateAngles()
 {
-    qreal angle = 0;
+    double angle = 0;
     const auto slices = _mainSeries->slices();
-    for (QPieSlice *slice : slices) {
-        QPieSeries *breakdownSeries = qobject_cast<MainSlice *>(slice)->breakdownSeries();
+    for (QPieSlice* slice : slices) {
+        QPieSeries* breakdownSeries = qobject_cast<MainSlice*>(slice)->breakdownSeries();
         breakdownSeries->setPieStartAngle(angle);
         angle += slice->percentage() * 360.0; // full pie is 360.0
         breakdownSeries->setPieEndAngle(angle);
     }
 }
-//![3]
-
-//![4]
+//======================================================================================================
 void DonutBreakdownChart::updateLegendMarkers()
 {
     // go through all markers
-    const auto allseries = series();
-    for (QAbstractSeries *series : allseries)
+    const auto all_series = series();
+    foreach (QAbstractSeries* series, all_series)
     {
         const auto markers = legend()->markers(series);
-        for (QLegendMarker *marker : markers)
+        foreach (QLegendMarker* marker, markers)
         {
-            QPieLegendMarker *pieMarker = qobject_cast<QPieLegendMarker*>(marker);
+            QPieLegendMarker* pieMarker = qobject_cast<QPieLegendMarker*>(marker);
             if (series == _mainSeries)
             {
                 // hide markers from main series
@@ -93,9 +87,8 @@ void DonutBreakdownChart::updateLegendMarkers()
                 pieMarker->setLabel(QString("%1 %2%")
                                     .arg(pieMarker->slice()->label())
                                     .arg(pieMarker->slice()->percentage() * 100, 0, 'f', 2));
-                pieMarker->setFont(QFont("Arial", 8));
+                pieMarker->setFont(QFont ("Arial", 16));
             }
         }
     }
 }
-//![4]
