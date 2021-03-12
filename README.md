@@ -21,6 +21,6 @@ It also evaluates the Harrington desirability scale for protein and lipid compon
 - only Russian available at the moment;
 - one of the coefficients of fatty acid is calculated incorrectly;
 - QtCharts view is not ready yet;
-- saving output is not implemented yet;
+- saving output is not implemented yet, as well as resources file;
 
 
