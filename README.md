@@ -9,8 +9,11 @@ This program allows you to calculate the following indicators for 100 servings o
 - index of balance;
 - biological value; 
 - indicator of comparable redundancy and balance coefficient of the protein component; 
-- coefficient of fatty acid match for 3 and 5 components.
+- coefficient of fatty acid match for 3 and 5 components.  
+
 It also evaluates the Harrington desirability scale for each component.
+
+
 
  ![Image alt](https://github.com/v43d3rm4k4r/QtNutrition_components_assessment/raw/master/Images/image1.png)  
  ![Image alt](https://github.com/v43d3rm4k4r/QtNutrition_components_assessment/raw/master/Images/image2.png)
