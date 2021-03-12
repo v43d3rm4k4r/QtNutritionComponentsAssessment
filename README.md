@@ -17,7 +17,7 @@ It also evaluates the Harrington desirability scale for protein and lipid compon
  ![Image alt](https://github.com/vaedermakar/QtNutrition_components_assessment/raw/master/Images/image2.png)
  
  ---
- # Current problems/bugs/imperfections:  
+ ### Current problems/bugs/imperfections:  
 - only Russian available at the moment;
 - one of the coefficients of fatty acid is calculated incorrectly;
 - QtCharts view is not ready yet;
