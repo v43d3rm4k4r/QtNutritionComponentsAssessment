@@ -9,7 +9,7 @@ This program allows you to calculate the following indicators for 100 g. serving
 - index of balance;
 - biological value; 
 - indicator of comparable redundancy and balance coefficient of the protein component; 
-- coefficient of fatty acid match for 3 and 5 components.  
+- coefficient of fatty acid match for 3 and 5 constituents.  
 
 It also evaluates the Harrington desirability scale for protein and lipid components.
 
