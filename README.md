@@ -13,8 +13,8 @@ This program allows you to calculate the following indicators for 100 g. serving
 
 It also evaluates the Harrington desirability scale for protein and lipid components.
 
- ![Image alt](https://github.com/vaedermakar/QtNutrition_components_assessment/raw/master/Images/image1.png)  
- ![Image alt](https://github.com/vaedermakar/QtNutrition_components_assessment/raw/master/Images/image2.png)
+ ![Image alt](https://github.com/vaedermakar/QtNutrition_components_assessment/raw/master/Screenshots/image1.png)  
+ ![Image alt](https://github.com/vaedermakar/QtNutrition_components_assessment/raw/master/Screenshots/image2.png)
  
  ---
  ### Current problems/bugs/imperfections:  
