@@ -50,26 +50,20 @@ void SummarySaveWindow::pushButtonConfirm_clicked()
         return;
     }
 
-
     QFile file(ui->lineEditPath->text());
     if (QFile::exists(ui->lineEditPath->text()))
     {
         QMessageBox msgBox;
-        msgBox.setIcon(QMessageBox::Question);
+        msgBox.setIcon(QMessageBox::Question); // sound?
         QPushButton* saveButton   = msgBox.addButton(tr("Сохранить"), QMessageBox::ActionRole);
         QPushButton* cancelButton = msgBox.addButton(QMessageBox::Abort); // почему нет конструктора с текстом??
         cancelButton->setText((tr("Отмена")));
         msgBox.setText(tr("Файл уже существует в указанной директории. Заменить?"));
         msgBox.setWindowTitle(tr("Сохранение"));
-        /*int ret = QMessageBox::warning(this, tr("Сохранение"),
-                                       tr("Файл уже существует в указанной директории. Заменить?"),
-                                       QMessageBox::Save | QMessageBox::Cancel);*/
-
         msgBox.exec();
 
         if (msgBox.clickedButton() == saveButton)
         {
-            // save
             if (!file.open((QIODevice::WriteOnly | QIODevice::Text)))
             {
                 QMessageBox::warning(this, tr("Сохранение"),
@@ -87,7 +81,6 @@ void SummarySaveWindow::pushButtonConfirm_clicked()
         }
         else if (msgBox.clickedButton() == cancelButton)
         {
-            // abort
             return;
         }
     }
