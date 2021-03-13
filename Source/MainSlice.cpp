@@ -1,3 +1,10 @@
+/*
+ * MainSlice.cpp
+ *
+ *  Created on: 2020
+ *      Author: Daniil Kuprianov
+ */
+
 #include "MainSlice.h"
 
 QT_CHARTS_USE_NAMESPACE

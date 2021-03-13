@@ -1,3 +1,10 @@
+/*
+ * DonutBreakdownChart.cpp
+ *
+ *  Created on: 2020
+ *      Author: Daniil Kuprianov
+ */
+
 #include "DonutBreakdownChart.h"
 #include "MainSlice.h"
 #include <QtCharts/QPieSlice>

@@ -1,6 +1,12 @@
+/*
+ * SummaryWindow.cpp
+ *
+ *  Created on: 2020
+ *      Author: Daniil Kuprianov
+ */
+
 #include "SummaryWindow.h"
 #include <QtWidgets/QApplication>
-//#include <QtWidgets/QMainWindow>
 #include <QtWidgets/QStatusBar>
 #include <QtCharts/QChartView>
 #include "DonutBreakdownChart.h"

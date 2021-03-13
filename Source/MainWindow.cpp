@@ -1,3 +1,10 @@
+/*
+ * MainWindow.cpp
+ *
+ *  Created on: 2020
+ *      Author: Daniil Kuprianov
+ */
+
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 #include <QMessageBox>

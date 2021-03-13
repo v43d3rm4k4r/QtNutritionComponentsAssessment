@@ -1,3 +1,10 @@
+/*
+ * SummaryWindow.h
+ *
+ *  Created on: 2020
+ *      Author: Daniil Kuprianov
+ */
+
 #pragma once
 
 #include <QtWidgets>

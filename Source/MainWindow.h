@@ -1,3 +1,10 @@
+/*
+ * MainWindow.h
+ *
+ *  Created on: 2020
+ *      Author: Daniil Kuprianov
+ */
+
 #pragma once
 
 #include <QMainWindow>
@@ -10,10 +17,6 @@ namespace Ui { class MainWindow;}
 QT_END_NAMESPACE
 
 #define DEBUG
-
-// TODO: -добавить считывание из .txt для автоматического заполнения спинбоксов (взять нарабоки из CSVReader)
-//       -переименовать структуры данных оригинального алгоритма
-//       -
 
 //======================================================================================================
 class MainWindow : public QMainWindow

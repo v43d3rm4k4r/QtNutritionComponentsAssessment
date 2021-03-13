@@ -1,3 +1,10 @@
+/*
+ * SummarySaveWindow.cpp
+ *
+ *  Created on: 2020
+ *      Author: Daniil Kuprianov
+ */
+
 #include "SummaryWindow.h"
 #include "SummarySaveWindow.h"
 #include <QMessageBox>
