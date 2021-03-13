@@ -4,8 +4,9 @@
 #include <QtWidgets/QStatusBar>
 #include <QtCharts/QChartView>
 #include "DonutBreakdownChart.h"
+#include "SummarySaveWindow.h"
 
-SummaryWindow::SummaryWindow(Summary& summary, QMainWindow& mainWindow, QWidget* parent)
+SummaryWindow::SummaryWindow(Summary& summary, QWidget* parent)
     : QFrame{parent}, ui{new Ui_Frame}, summary{summary}
 {
     ui->setupUi(this);
@@ -437,6 +438,11 @@ void SummaryWindow::showResults()
     ui->textEdit->append("=================================================");
 }
 //======================================================================================================
+/*void SummaryWindow::sendResultToSaveWindow()
+{
+    emit sendResultToSaveWindowSignal(ui->textEdit->toPlainText());
+}*/
+//======================================================================================================
 /*void SummaryWindow::closeEvent(QCloseEvent* event)
 {
     Q_UNUSED(event);
@@ -448,7 +454,10 @@ void SummaryWindow::showResults()
 //======================================================================================================
 void SummaryWindow::pushButtonSave_clicked()
 {
-
+    SummarySaveWindow* save_window = new SummarySaveWindow(ui->textEdit->toPlainText(), this);
+    save_window->setWindowFlags(Qt::Window);
+    save_window->setWindowModality(Qt::ApplicationModal);
+    save_window->show();
 }
 //======================================================================================================
 void SummaryWindow::pushButtonShowChart_clicked()

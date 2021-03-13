@@ -20,6 +20,7 @@ SOURCES += \
     DonutBreakdownChart.cpp \
     MainSlice.cpp \
     MainWindow.cpp \
+    SummarySaveWindow.cpp \
     SummaryWindow.cpp \
     main.cpp
 
@@ -28,10 +29,12 @@ HEADERS += \
     DonutBreakdownChart.h \
     MainSlice.h \
     MainWindow.h \
+    SummarySaveWindow.h \
     SummaryWindow.h
 
 FORMS += \
     MainWindow.ui \
+    SummarySaveWindow.ui \
     SummaryWindow.ui
 
 # Default rules for deployment.

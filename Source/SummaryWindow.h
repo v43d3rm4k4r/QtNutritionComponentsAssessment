@@ -15,7 +15,6 @@ class SummaryWindow : public QFrame
 
     Ui_Frame* ui;
     Summary& summary;
-    //QMainWindow& mainWindow;
 
     void showResults();
 
@@ -24,6 +23,6 @@ private slots:
     void pushButtonShowChart_clicked();
 
 public:
-    SummaryWindow(Summary& summary, QMainWindow& mainWindow, QWidget* parent);
+    SummaryWindow(Summary& summary, QWidget* parent);
     virtual ~SummaryWindow();
 };

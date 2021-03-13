@@ -508,7 +508,7 @@ QVector<QVector<QDoubleSpinBox*>> MainWindow::getAllSpinBoxes() const
 //======================================================================================================
 void MainWindow::showResults()
 {
-    SummaryWindow* wgt = new SummaryWindow(summary, *this, this);
+    SummaryWindow* wgt = new SummaryWindow(summary, this);
 
     wgt->setWindowFlags(Qt::Window);
 
