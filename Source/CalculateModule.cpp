@@ -310,7 +310,7 @@ double CalculateModule::calcRecountProteins(uint32_t col, double protein[], doub
     if (result.comp_num == 5 && col == 4)
         return comp * 100 / protein[4];
 
-    throw CalcException(1);
+    throw CalcException("Error in calcRecountProteins()");
 }
 //================================================================================================================================
 double CalculateModule::calcAKP(uint32_t row, double prop[], double recount[][MAX_COMP]) const
@@ -328,7 +328,7 @@ double CalculateModule::calcAKP(uint32_t row, double prop[], double recount[][MA
         return (prop[0] * recount[row][0]) + (prop[1] * recount[row][1]) + (prop[2] * recount[row][2])
                + (prop[3] * recount[row][3]) + (prop[4] * recount[row][4]);
 
-    throw CalcException(2);
+    throw CalcException("Error in calcAKP()");
 }
 //================================================================================================================================
 double CalculateModule::calcAminoacidskor(double akp, const double fao_voz2007) const noexcept
@@ -381,7 +381,7 @@ double CalculateModule::calcRecoutLip(uint32_t row, double lipids[], double ulti
     if (result.comp_num == 5 && row == 4)
         return ultimate * 100 / lipids[4];
 
-    throw CalcException(3);
+    throw CalcException("Error in calcRecoutLip()");
 }
 //================================================================================================================================
 double CalculateModule::calcKoefRation(double min_aminoacidskor, double aminoacidskor) const noexcept
@@ -404,7 +404,7 @@ double CalculateModule::calcRatioCalc(uint32_t row, double prop[], double recoun
         return (prop[0] * recount_lip[row][0]) + (prop[1] * recount_lip[row][1]) + (prop[2] * recount_lip[row][2])
                + (prop[3] * recount_lip[row][3]) + (prop[4] * recount_lip[row][4]);
 
-    throw CalcException(4);
+    throw CalcException("Error in calcRatioCalc()");
 }
 //================================================================================================================================
 double CalculateModule::calcLipBalanceRatio(double ratio_calc, double fao_voz2008) const noexcept

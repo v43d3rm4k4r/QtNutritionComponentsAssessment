@@ -63,19 +63,10 @@ class CalcException : public std::exception
     char* _what;
 
 public:
-    CalcException(uint32_t func_num) : _what{nullptr}
+    CalcException(const char* error) : _what{nullptr}
     {
-        if (func_num == 1)
-            strcpy(_what, "Error in calcRecountProteins()");
-
-        if (func_num == 2)
-            strcpy(_what, "Error in calcAKP()");
-
-        if (func_num == 3)
-            strcpy(_what, "Error in calcRecoutLip()");
-
-        if (func_num == 4)
-            strcpy(_what, "Error in calcRatioCalc()");
+        _what = new char[strlen(error)+1];
+        strcpy(_what, error);
     }
 
     const char* what() const noexcept override
