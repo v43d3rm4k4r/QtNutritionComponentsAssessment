@@ -1,6 +1,6 @@
 # Qt Nutrition components assessment  
 
-Qt version of Nutrition components assessment  
+Qt version of Nutrition components assessment.  
 
 This program allows you to calculate the following indicators for 100 g. serving of a product consisting of 1–5 ingredients: 
 - amino acids; 
