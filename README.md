@@ -1,8 +1,10 @@
 # Qt Nutrition components assessment  
 
-Qt version of Nutrition components assessment.  
+Qt version of Nutrition components assessment. This project is DEPRECATED.  
 
-This program allows you to calculate the following indicators for 100 g. serving of a product consisting of 1–5 ingredients: 
+
+
+The program allows you to calculate the following indicators for 100 g. serving of a product consisting of 1–5 ingredients: 
 - amino acids; 
 - rationality and balance coefficients for each essential amino acid (for each component separately and in the product as a whole);
 - amino acid composition coefficient; 
@@ -21,6 +23,5 @@ It also evaluates the Harrington desirability scale for protein and lipid compon
 - only Russian available at the moment;
 - one of the coefficients of fatty acid is calculated incorrectly;
 - QtCharts view is not ready yet;
-- resources file is not implemented yet;
 
 
