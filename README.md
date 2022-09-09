@@ -1,6 +1,6 @@
 # Qt Nutrition components assessment  
 
-Qt version of Nutrition components assessment. This project is DEPRECATED.  
+Qt version of Nutrition components assessment, written in C. This project is DEPRECATED.  
 
 
 
